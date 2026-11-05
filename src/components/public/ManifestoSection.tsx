@@ -1,8 +1,11 @@
 import React from 'react';
+import { motion, useReducedMotion } from 'motion/react';
 import { useCartel } from '../../context/CartelContext';
 
 export const ManifestoSection: React.FC = () => {
   const { setRoute } = useCartel();
+  const shouldReduceMotion = useReducedMotion();
+  const easeEditorial: [number, number, number, number] = [0.2, 0.7, 0.1, 1];
 
   return (
     <section
@@ -10,9 +13,13 @@ export const ManifestoSection: React.FC = () => {
       aria-label="Manifesto — Brand Identity"
       className="relative py-28 sm:py-36 lg:py-48 px-5 sm:px-8 lg:px-14 border-t border-[rgba(230,223,209,0.14)] overflow-hidden"
     >
-      {/* Background: Faint Concentric Hairline Rings */}
-      <div
+      {/* Background: Faint Concentric Hairline Rings with Clip-Path Reveal */}
+      <motion.div
         aria-hidden="true"
+        initial={shouldReduceMotion ? false : { clipPath: 'inset(0% 0% 100% 0%)' }}
+        whileInView={{ clipPath: 'inset(0% 0% 0% 0%)' }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 1.5, ease: easeEditorial }}
         className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden"
       >
         <svg
@@ -22,37 +29,38 @@ export const ManifestoSection: React.FC = () => {
           <circle
             cx="500"
             cy="500"
-            r="99.5"
+            r="48"
             fill="none"
-            stroke="rgba(230, 223, 209, 0.08)"
+            stroke="rgba(230, 223, 209, 0.13)"
             strokeWidth="1"
           />
           <circle
             cx="500"
             cy="500"
-            r="246.2"
+            r="118"
             fill="none"
-            stroke="rgba(230, 223, 209, 0.08)"
+            stroke="rgba(230, 223, 209, 0.13)"
             strokeWidth="1"
           />
           <circle
             cx="500"
             cy="500"
-            r="448.7"
+            r="215"
             fill="none"
-            stroke="rgba(230, 223, 209, 0.08)"
+            stroke="rgba(230, 223, 209, 0.13)"
             strokeWidth="1"
           />
           <circle
             cx="500"
             cy="500"
-            r="495"
+            r="480"
             fill="none"
-            stroke="rgba(230, 223, 209, 0.06)"
+            stroke="rgba(230, 223, 209, 0.11)"
             strokeWidth="1"
           />
+          <circle cx="500" cy="500" r="4.5" fill="#B69A67" />
         </svg>
-      </div>
+      </motion.div>
 
       <div className="relative z-10 max-w-[1440px] mx-auto">
         {/* Chapter Metadata */}
@@ -63,21 +71,52 @@ export const ManifestoSection: React.FC = () => {
 
         {/* Asymmetrical Editorial Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Left Column: Section Headline (Cols 1-6) */}
+          {/* Left Column: Masked Section Headline (Cols 1-6) */}
           <div className="lg:col-span-6">
-            <h2
+            <motion.h2
               aria-label="HONOR ARMED WITH LEVERAGE."
+              initial={shouldReduceMotion ? 'visible' : 'hidden'}
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={{
+                hidden: {},
+                visible: { transition: { staggerChildren: 0.12 } }
+              }}
               className="font-display font-light text-4xl sm:text-6xl lg:text-7xl text-[#F4F0E8] leading-[0.92] tracking-[-0.01em]"
             >
-              <span className="block pb-1">HONOR ARMED</span>
-              <span className="block pt-1 text-[#E6DFD1]">
-                WITH LEVERAGE<span className="text-[#B69A67]">.</span>
+              <span className="block overflow-hidden pb-1">
+                <motion.span
+                  variants={{
+                    hidden: { y: '108%' },
+                    visible: { y: 0, transition: { duration: 1.15, ease: easeEditorial } }
+                  }}
+                  className="block"
+                >
+                  HONOR ARMED
+                </motion.span>
               </span>
-            </h2>
+              <span className="block overflow-hidden pt-1">
+                <motion.span
+                  variants={{
+                    hidden: { y: '108%' },
+                    visible: { y: 0, transition: { duration: 1.15, ease: easeEditorial } }
+                  }}
+                  className="block text-[#E6DFD1]"
+                >
+                  WITH LEVERAGE<span className="text-[#B69A67]">.</span>
+                </motion.span>
+              </span>
+            </motion.h2>
           </div>
 
           {/* Right Column: Exact Excerpt & Discreet Link (Cols 7-12) */}
-          <div className="lg:col-span-6 space-y-8 pt-2">
+          <motion.div
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 1.0, ease: easeEditorial, delay: 0.18 }}
+            className="lg:col-span-6 space-y-8 pt-2"
+          >
             <p className="font-display font-light text-2xl sm:text-3xl text-[#F4F0E8] leading-[1.35]">
               DeadLockCartel is an alliance of independent individuals, creators and traders, united around shared value, collective intelligence, mutual protection and a common economic treasury.
             </p>
@@ -89,12 +128,12 @@ export const ManifestoSection: React.FC = () => {
             <div className="pt-4 border-t border-[rgba(230,223,209,0.14)]">
               <button
                 onClick={() => setRoute('/lore')}
-                className="group inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.26em] text-[#B69A67] hover:text-[#F4F0E8] transition-colors duration-200 cursor-pointer py-1"
+                className="group inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.26em] text-[#B69A67] hover:text-[#F4F0E8] transition-colors duration-300 cursor-pointer py-1 border-b border-[#8D7954] hover:border-[#F4F0E8] pb-2"
               >
                 <span>READ THE FULL MANIFESTO →</span>
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

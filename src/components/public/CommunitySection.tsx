@@ -1,8 +1,11 @@
 import React from 'react';
+import { motion, useReducedMotion } from 'motion/react';
 import { useCartel } from '../../context/CartelContext';
 
 export const CommunitySection: React.FC = () => {
   const { setRoute } = useCartel();
+  const shouldReduceMotion = useReducedMotion();
+  const easeEditorial: [number, number, number, number] = [0.2, 0.7, 0.1, 1];
 
   return (
     <section
@@ -17,31 +20,68 @@ export const CommunitySection: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-end">
-        {/* Left: Section Headline (Cols 1-7) */}
+        {/* Left: Masked Section Headline (Cols 1-7) */}
         <div className="lg:col-span-7 space-y-10">
-          <h2
+          <motion.h2
             aria-label="THE CARTEL TAKES CARE OF ITS OWN."
+            initial={shouldReduceMotion ? 'visible' : 'hidden'}
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.12 } }
+            }}
             className="font-display font-light text-4xl sm:text-6xl lg:text-7xl text-[#F4F0E8] leading-[0.92] tracking-[-0.01em]"
           >
-            <span className="block pb-1">THE CARTEL TAKES</span>
-            <span className="block pt-1 text-[#E6DFD1]">
-              CARE OF ITS OWN<span className="text-[#B69A67]">.</span>
+            <span className="block overflow-hidden pb-1">
+              <motion.span
+                variants={{
+                  hidden: { y: '108%' },
+                  visible: { y: 0, transition: { duration: 1.15, ease: easeEditorial } }
+                }}
+                className="block"
+              >
+                THE CARTEL TAKES
+              </motion.span>
             </span>
-          </h2>
+            <span className="block overflow-hidden pt-1">
+              <motion.span
+                variants={{
+                  hidden: { y: '108%' },
+                  visible: { y: 0, transition: { duration: 1.15, ease: easeEditorial } }
+                }}
+                className="block text-[#E6DFD1]"
+              >
+                CARE OF ITS OWN<span className="text-[#B69A67]">.</span>
+              </motion.span>
+            </span>
+          </motion.h2>
 
-          <div className="pt-2">
+          <motion.div
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.85, ease: easeEditorial, delay: 0.2 }}
+            className="pt-2"
+          >
             <button
               type="button"
               onClick={() => setRoute('/member')}
-              className="px-8 py-4 text-[11px] font-medium uppercase tracking-[0.24em] text-[#171717] bg-[#B69A67] hover:bg-[#8D7954] transition-colors duration-200 cursor-pointer whitespace-nowrap"
+              className="px-8 py-4 text-[11px] font-medium uppercase tracking-[0.24em] text-[#171717] bg-[#E6DFD1] hover:bg-[#B69A67] transition-colors duration-300 cursor-pointer whitespace-nowrap"
             >
               ENTER THE PORTAL
             </button>
-          </div>
+          </motion.div>
         </div>
 
         {/* Right: Structured Specifications (Website, Handle, Network, Ticker) (Cols 8-12) */}
-        <div className="lg:col-span-5 border-t border-[rgba(230,223,209,0.14)]">
+        <motion.div
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.9, ease: easeEditorial, delay: 0.15 }}
+          className="lg:col-span-5 border-t border-[rgba(230,223,209,0.14)]"
+        >
           <dl className="divide-y divide-[rgba(230,223,209,0.14)] border-b border-[rgba(230,223,209,0.14)] text-xs">
             <div className="py-4 flex items-center justify-between gap-4">
               <dt className="uppercase tracking-[0.22em] text-[#A39E92]">WEBSITE</dt>
@@ -69,7 +109,7 @@ export const CommunitySection: React.FC = () => {
               <dd className="text-[#B69A67] uppercase tracking-[0.18em]">DLC</dd>
             </div>
           </dl>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
