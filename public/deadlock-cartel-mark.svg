@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <rect width="256" height="256" fill="#171717"/>
+  <!-- Outer Ivory Ring -->
+  <circle cx="128" cy="128" r="106" fill="none" stroke="#E6DFD1" stroke-width="2" stroke-opacity="0.9"/>
+  <!-- Outer Ring of 60 Rookie Stone Dots (#8E897D) at r=95 -->
+  <g fill="#8E897D">
+    <circle cx="223.0" cy="128.0" r="2.2"/>
+    <circle cx="222.5" cy="137.9" r="2.2"/>
+    <circle cx="220.9" cy="147.8" r="2.2"/>
+    <circle cx="218.4" cy="157.4" r="2.2"/>
+    <circle cx="214.8" cy="166.6" r="2.2"/>
+    <circle cx="210.3" cy="175.5" r="2.2"/>
+    <circle cx="204.9" cy="183.8" r="2.2"/>
+    <circle cx="198.6" cy="191.6" r="2.2"/>
+    <circle cx="191.6" cy="198.6" r="2.2"/>
+    <circle cx="183.8" cy="204.9" r="2.2"/>
+    <circle cx="175.5" cy="210.3" r="2.2"/>
+    <circle cx="166.6" cy="214.8" r="2.2"/>
+    <circle cx="157.4" cy="218.4" r="2.2"/>
+    <circle cx="147.8" cy="220.9" r="2.2"/>
+    <circle cx="137.9" cy="222.5" r="2.2"/>
+    <circle cx="128.0" cy="223.0" r="2.2"/>
+    <circle cx="118.1" cy="222.5" r="2.2"/>
+    <circle cx="108.2" cy="220.9" r="2.2"/>
+    <circle cx="98.6" cy="218.4" r="2.2"/>
+    <circle cx="89.4" cy="214.8" r="2.2"/>
+    <circle cx="80.5" cy="210.3" r="2.2"/>
+    <circle cx="72.2" cy="204.9" r="2.2"/>
+    <circle cx="64.4" cy="198.6" r="2.2"/>
+    <circle cx="57.4" cy="191.6" r="2.2"/>
+    <circle cx="51.1" cy="183.8" r="2.2"/>
+    <circle cx="45.7" cy="175.5" r="2.2"/>
+    <circle cx="41.2" cy="166.6" r="2.2"/>
+    <circle cx="37.6" cy="157.4" r="2.2"/>
+    <circle cx="35.1" cy="147.8" r="2.2"/>
+    <circle cx="33.5" cy="137.9" r="2.2"/>
+    <circle cx="33.0" cy="128.0" r="2.2"/>
+    <circle cx="33.5" cy="118.1" r="2.2"/>
+    <circle cx="35.1" cy="108.2" r="2.2"/>
+    <circle cx="37.6" cy="98.6" r="2.2"/>
+    <circle cx="41.2" cy="89.4" r="2.2"/>
+    <circle cx="45.7" cy="80.5" r="2.2"/>
+    <circle cx="51.1" cy="72.2" r="2.2"/>
+    <circle cx="57.4" cy="64.4" r="2.2"/>
+    <circle cx="64.4" cy="57.4" r="2.2"/>
+    <circle cx="72.2" cy="51.1" r="2.2"/>
+    <circle cx="80.5" cy="45.7" r="2.2"/>
+    <circle cx="89.4" cy="41.2" r="2.2"/>
+    <circle cx="98.6" cy="37.6" r="2.2"/>
+    <circle cx="108.2" cy="35.1" r="2.2"/>
+    <circle cx="118.1" cy="33.5" r="2.2"/>
+    <circle cx="128.0" cy="33.0" r="2.2"/>
+    <circle cx="137.9" cy="33.5" r="2.2"/>
+    <circle cx="147.8" cy="35.1" r="2.2"/>
+    <circle cx="157.4" cy="37.6" r="2.2"/>
+    <circle cx="166.6" cy="41.2" r="2.2"/>
+    <circle cx="175.5" cy="45.7" r="2.2"/>
+    <circle cx="183.8" cy="51.1" r="2.2"/>
+    <circle cx="191.6" cy="57.4" r="2.2"/>
+    <circle cx="198.6" cy="64.4" r="2.2"/>
+    <circle cx="204.9" cy="72.2" r="2.2"/>
+    <circle cx="210.3" cy="80.5" r="2.2"/>
+    <circle cx="214.8" cy="89.4" r="2.2"/>
+    <circle cx="218.4" cy="98.6" r="2.2"/>
+    <circle cx="220.9" cy="108.2" r="2.2"/>
+    <circle cx="222.5" cy="118.1" r="2.2"/>
+  </g>
+  <!-- Middle Ring of 24 Member Ivory Dots (#E6DFD1) at r=52 -->
+  <g fill="#E6DFD1">
+    <circle cx="180.0" cy="128.0" r="2.8"/>
+    <circle cx="178.2" cy="141.5" r="2.8"/>
+    <circle cx="173.0" cy="154.0" r="2.8"/>
+    <circle cx="164.8" cy="164.8" r="2.8"/>
+    <circle cx="154.0" cy="173.0" r="2.8"/>
+    <circle cx="141.5" cy="178.2" r="2.8"/>
+    <circle cx="128.0" cy="180.0" r="2.8"/>
+    <circle cx="114.5" cy="178.2" r="2.8"/>
+    <circle cx="102.0" cy="173.0" r="2.8"/>
+    <circle cx="91.2" cy="164.8" r="2.8"/>
+    <circle cx="83.0" cy="154.0" r="2.8"/>
+    <circle cx="77.8" cy="141.5" r="2.8"/>
+    <circle cx="76.0" cy="128.0" r="2.8"/>
+    <circle cx="77.8" cy="114.5" r="2.8"/>
+    <circle cx="83.0" cy="102.0" r="2.8"/>
+    <circle cx="91.2" cy="91.2" r="2.8"/>
+    <circle cx="102.0" cy="83.0" r="2.8"/>
+    <circle cx="114.5" cy="77.8" r="2.8"/>
+    <circle cx="128.0" cy="76.0" r="2.8"/>
+    <circle cx="141.5" cy="77.8" r="2.8"/>
+    <circle cx="154.0" cy="83.0" r="2.8"/>
+    <circle cx="164.8" cy="91.2" r="2.8"/>
+    <circle cx="173.0" cy="102.0" r="2.8"/>
+    <circle cx="178.2" cy="114.5" r="2.8"/>
+  </g>
+  <!-- Inner Ring of 12 Godmother Gold Dots (#B69A67) at r=31 -->
+  <g fill="#B69A67">
+    <circle cx="159.0" cy="128.0" r="3.4"/>
+    <circle cx="154.8" cy="143.5" r="3.4"/>
+    <circle cx="143.5" cy="154.8" r="3.4"/>
+    <circle cx="128.0" cy="159.0" r="3.4"/>
+    <circle cx="112.5" cy="154.8" r="3.4"/>
+    <circle cx="101.2" cy="143.5" r="3.4"/>
+    <circle cx="97.0" cy="128.0" r="3.4"/>
+    <circle cx="101.2" cy="112.5" r="3.4"/>
+    <circle cx="112.5" cy="101.2" r="3.4"/>
+    <circle cx="128.0" cy="97.0" r="3.4"/>
+    <circle cx="143.5" cy="101.2" r="3.4"/>
+    <circle cx="154.8" cy="112.5" r="3.4"/>
+  </g>
+  <!-- Innermost Ring of 6 Kingpin Gold Dots (#CDB27D) at r=14 -->
+  <g fill="#CDB27D">
+    <circle cx="140.1" cy="135.0" r="3.6"/>
+    <circle cx="128.0" cy="142.0" r="3.6"/>
+    <circle cx="115.9" cy="135.0" r="3.6"/>
+    <circle cx="115.9" cy="121.0" r="3.6"/>
+    <circle cx="128.0" cy="114.0" r="3.6"/>
+    <circle cx="140.1" cy="121.0" r="3.6"/>
+  </g>
+  <!-- Center Apex Gold Dot (#CDB27D) -->
+  <circle cx="128" cy="128" r="6" fill="#CDB27D"/>
+</svg>

@@ -1,11 +1,8 @@
 import React from 'react';
-import { motion, useReducedMotion } from 'motion/react';
 import { useCartel } from '../../context/CartelContext';
 
 export const ManifestoSection: React.FC = () => {
   const { setRoute } = useCartel();
-  const shouldReduceMotion = useReducedMotion();
-  const easeEditorial: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
   return (
     <section
@@ -66,42 +63,17 @@ export const ManifestoSection: React.FC = () => {
 
         {/* Asymmetrical Editorial Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Left Column: Masked Section Headline (Cols 1-6) */}
+          {/* Left Column: Section Headline (Cols 1-6) */}
           <div className="lg:col-span-6">
-            <motion.h2
+            <h2
               aria-label="HONOR ARMED WITH LEVERAGE."
-              initial={shouldReduceMotion ? 'visible' : 'hidden'}
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={{
-                hidden: {},
-                visible: { transition: { staggerChildren: 0.1 } }
-              }}
               className="font-display font-light text-4xl sm:text-6xl lg:text-7xl text-[#F4F0E8] leading-[0.92] tracking-[-0.01em]"
             >
-              <span className="block overflow-hidden pb-1">
-                <motion.span
-                  variants={{
-                    hidden: { y: '105%' },
-                    visible: { y: 0, transition: { duration: 0.85, ease: easeEditorial } }
-                  }}
-                  className="block"
-                >
-                  HONOR ARMED
-                </motion.span>
+              <span className="block pb-1">HONOR ARMED</span>
+              <span className="block pt-1 text-[#E6DFD1]">
+                WITH LEVERAGE<span className="text-[#B69A67]">.</span>
               </span>
-              <span className="block overflow-hidden pt-1">
-                <motion.span
-                  variants={{
-                    hidden: { y: '105%' },
-                    visible: { y: 0, transition: { duration: 0.85, ease: easeEditorial } }
-                  }}
-                  className="block text-[#E6DFD1]"
-                >
-                  WITH LEVERAGE<span className="text-[#B69A67]">.</span>
-                </motion.span>
-              </span>
-            </motion.h2>
+            </h2>
           </div>
 
           {/* Right Column: Exact Excerpt & Discreet Link (Cols 7-12) */}

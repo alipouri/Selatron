@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion, useReducedMotion } from 'motion/react';
 import { useCartel, AppRoute } from '../../context/CartelContext';
 
 interface EcosystemPillar {
@@ -50,8 +49,6 @@ const ECOSYSTEM_PILLARS: EcosystemPillar[] = [
 
 export const SixPillarsSection: React.FC = () => {
   const { setRoute } = useCartel();
-  const shouldReduceMotion = useReducedMotion();
-  const easeEditorial: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
   return (
     <section
@@ -65,42 +62,17 @@ export const SixPillarsSection: React.FC = () => {
         <span className="hidden sm:inline">SIX UTILITY PILLARS</span>
       </div>
 
-      {/* Section Headline (Masked Line Reveal) */}
+      {/* Section Headline */}
       <div className="mb-16 sm:mb-24">
-        <motion.h2
+        <h2
           aria-label="MORE THAN OWNERSHIP."
-          initial={shouldReduceMotion ? 'visible' : 'hidden'}
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: 0.1 } }
-          }}
           className="font-display font-light text-4xl sm:text-6xl lg:text-7xl text-[#F4F0E8] leading-[0.92] tracking-[-0.01em]"
         >
-          <span className="block overflow-hidden pb-1">
-            <motion.span
-              variants={{
-                hidden: { y: '105%' },
-                visible: { y: 0, transition: { duration: 0.85, ease: easeEditorial } }
-              }}
-              className="block"
-            >
-              MORE THAN
-            </motion.span>
+          <span className="block pb-1">MORE THAN</span>
+          <span className="block pt-1 text-[#E6DFD1]">
+            OWNERSHIP<span className="text-[#B69A67]">.</span>
           </span>
-          <span className="block overflow-hidden pt-1">
-            <motion.span
-              variants={{
-                hidden: { y: '105%' },
-                visible: { y: 0, transition: { duration: 0.85, ease: easeEditorial } }
-              }}
-              className="block text-[#E6DFD1]"
-            >
-              OWNERSHIP<span className="text-[#B69A67]">.</span>
-            </motion.span>
-          </span>
-        </motion.h2>
+        </h2>
       </div>
 
       {/* Asymmetrical Split: Left = 6 Ruled List Items | Right = Restrained Vault Panel */}
@@ -128,7 +100,7 @@ export const SixPillarsSection: React.FC = () => {
                 </div>
               </div>
 
-              <span className="text-xs uppercase tracking-[0.22em] text-[#B69A67] shrink-0 transition-transform duration-200 group-hover:translate-x-1">
+              <span className="text-xs uppercase tracking-[0.22em] text-[#B69A67] shrink-0">
                 →
               </span>
             </button>
@@ -136,12 +108,8 @@ export const SixPillarsSection: React.FC = () => {
         </div>
 
         {/* Right: Restrained Vault Panel showing ONLY "AWAITING CONFIGURATION" and dashes (Cols 8-12) */}
-        <motion.aside
+        <aside
           aria-label="The Vault Status Panel"
-          initial={shouldReduceMotion ? false : { clipPath: 'inset(10% 0% 10% 0%)' }}
-          whileInView={{ clipPath: 'inset(0% 0% 0% 0%)' }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.9, ease: easeEditorial }}
           className="lg:col-span-5 bg-[#202020] border border-[rgba(230,223,209,0.14)] p-7 sm:p-10 space-y-8"
         >
           <div className="flex items-center justify-between pb-5 border-b border-[rgba(230,223,209,0.14)]">
@@ -190,7 +158,7 @@ export const SixPillarsSection: React.FC = () => {
               INSPECT VAULT ARCHITECTURE →
             </button>
           </div>
-        </motion.aside>
+        </aside>
       </div>
     </section>
   );

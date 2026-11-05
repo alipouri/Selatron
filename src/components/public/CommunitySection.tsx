@@ -1,11 +1,8 @@
 import React from 'react';
-import { motion, useReducedMotion } from 'motion/react';
 import { useCartel } from '../../context/CartelContext';
 
 export const CommunitySection: React.FC = () => {
   const { setRoute } = useCartel();
-  const shouldReduceMotion = useReducedMotion();
-  const easeEditorial: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
   return (
     <section
@@ -20,42 +17,17 @@ export const CommunitySection: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-end">
-        {/* Left: Masked Section Headline (Cols 1-7) */}
+        {/* Left: Section Headline (Cols 1-7) */}
         <div className="lg:col-span-7 space-y-10">
-          <motion.h2
+          <h2
             aria-label="THE CARTEL TAKES CARE OF ITS OWN."
-            initial={shouldReduceMotion ? 'visible' : 'hidden'}
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={{
-              hidden: {},
-              visible: { transition: { staggerChildren: 0.1 } }
-            }}
             className="font-display font-light text-4xl sm:text-6xl lg:text-7xl text-[#F4F0E8] leading-[0.92] tracking-[-0.01em]"
           >
-            <span className="block overflow-hidden pb-1">
-              <motion.span
-                variants={{
-                  hidden: { y: '105%' },
-                  visible: { y: 0, transition: { duration: 0.85, ease: easeEditorial } }
-                }}
-                className="block"
-              >
-                THE CARTEL TAKES
-              </motion.span>
+            <span className="block pb-1">THE CARTEL TAKES</span>
+            <span className="block pt-1 text-[#E6DFD1]">
+              CARE OF ITS OWN<span className="text-[#B69A67]">.</span>
             </span>
-            <span className="block overflow-hidden pt-1">
-              <motion.span
-                variants={{
-                  hidden: { y: '105%' },
-                  visible: { y: 0, transition: { duration: 0.85, ease: easeEditorial } }
-                }}
-                className="block text-[#E6DFD1]"
-              >
-                CARE OF ITS OWN<span className="text-[#B69A67]">.</span>
-              </motion.span>
-            </span>
-          </motion.h2>
+          </h2>
 
           <div className="pt-2">
             <button

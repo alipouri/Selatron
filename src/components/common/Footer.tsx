@@ -10,8 +10,15 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-[rgba(230,223,209,0.14)]">
           {/* Brand Column */}
           <div className="md:col-span-5 space-y-3">
-            <div className="font-display text-lg tracking-[0.22em] text-[#F4F0E8]">
-              DEADLOCK CARTEL
+            <div className="flex items-center gap-3 font-display text-lg tracking-[0.22em] text-[#F4F0E8]">
+              <img
+                src="./deadlock-cartel-mark.svg"
+                alt=""
+                width={26}
+                height={26}
+                className="w-6.5 h-6.5 shrink-0"
+              />
+              <span>DEADLOCK CARTEL</span>
             </div>
             <p className="text-xs text-[#A39E92] max-w-sm leading-relaxed">
               An on-chain economic brotherhood on the Robinhood Chain. 3,333 memberships across four ranks.

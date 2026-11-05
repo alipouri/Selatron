@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion, useReducedMotion } from 'motion/react';
 import { useCartel } from '../../context/CartelContext';
 import { TierId } from '../../types/cartel';
 import { PhyllotaxisFigure } from '../common/PhyllotaxisFigure';
@@ -56,11 +55,9 @@ const COLLECTION_TIERS: CollectionTierRow[] = [
 
 export const CollectionSection: React.FC = () => {
   const { setRoute } = useCartel();
-  const shouldReduceMotion = useReducedMotion();
   const [expandedTier, setExpandedTier] = useState<TierId | null>('kingpin');
   const [hoveredTier, setHoveredTier] = useState<TierId | null>(null);
 
-  const easeEditorial: [number, number, number, number] = [0.16, 1, 0.3, 1];
   const highlightedTier = hoveredTier ?? expandedTier;
 
   const handleRowToggle = (tierId: TierId) => {
@@ -79,42 +76,17 @@ export const CollectionSection: React.FC = () => {
         <span className="hidden sm:inline">OFFICIAL ARTWORK PLACEHOLDER · AWAITING PUBLICATION</span>
       </div>
 
-      {/* Section Headline (Masked Line Reveal) */}
+      {/* Section Headline */}
       <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 sm:mb-24">
-        <motion.h2
+        <h2
           aria-label="3,333. ONE ALLIANCE."
-          initial={shouldReduceMotion ? 'visible' : 'hidden'}
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: 0.1 } }
-          }}
           className="font-display font-light text-4xl sm:text-6xl lg:text-7xl text-[#F4F0E8] leading-[0.92] tracking-[-0.01em]"
         >
-          <span className="block overflow-hidden pb-1">
-            <motion.span
-              variants={{
-                hidden: { y: '105%' },
-                visible: { y: 0, transition: { duration: 0.85, ease: easeEditorial } }
-              }}
-              className="block"
-            >
-              3,333. ONE
-            </motion.span>
+          <span className="block pb-1">3,333. ONE</span>
+          <span className="block pt-1 text-[#E6DFD1]">
+            ALLIANCE<span className="text-[#B69A67]">.</span>
           </span>
-          <span className="block overflow-hidden pt-1">
-            <motion.span
-              variants={{
-                hidden: { y: '105%' },
-                visible: { y: 0, transition: { duration: 0.85, ease: easeEditorial } }
-              }}
-              className="block text-[#E6DFD1]"
-            >
-              ALLIANCE<span className="text-[#B69A67]">.</span>
-            </motion.span>
-          </span>
-        </motion.h2>
+        </h2>
 
         <div className="flex flex-wrap items-center gap-6 text-[11px] uppercase tracking-[0.24em]">
           <button
@@ -212,14 +184,8 @@ export const CollectionSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Right: Clip-Path Revealed Phyllotaxis Figure with Tier Highlighting (Cols 7-12) */}
-        <motion.div
-          initial={shouldReduceMotion ? false : { clipPath: 'inset(12% 12% 12% 12%)' }}
-          whileInView={{ clipPath: 'inset(0% 0% 0% 0%)' }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.95, ease: easeEditorial }}
-          className="lg:col-span-6 relative bg-[#171717] border border-[rgba(230,223,209,0.14)] p-4 sm:p-6"
-        >
+        {/* Right: Phyllotaxis Figure with Tier Highlighting (Cols 7-12) */}
+        <div className="lg:col-span-6 relative bg-[#171717] border border-[rgba(230,223,209,0.14)] p-4 sm:p-6">
           <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.22em] text-[#A39E92] pb-3 border-b border-[rgba(230,223,209,0.14)]">
             <span>PHYLLOTAXIS ARCHIVE · N = 3,333</span>
             <span className="text-[#B69A67]">
@@ -230,7 +196,7 @@ export const CollectionSection: React.FC = () => {
           <div className="w-full aspect-square max-w-[520px] mx-auto my-2">
             <PhyllotaxisFigure
               highlightedTier={highlightedTier}
-              ariaLabel="Interactive 3,333-point phyllotaxis collection diagram. Selecting or hovering a rank row highlights its corresponding ring and points while dimming other tiers to 14% opacity."
+              ariaLabel="The same circle of 3,333 points. Selecting a tier highlights its share of the alliance."
             />
           </div>
 
@@ -238,7 +204,7 @@ export const CollectionSection: React.FC = () => {
             <span>RINGS: √(33/3333) · √(202/3333) · √(671/3333) · 1</span>
             <span>ARTWORK: PLACEHOLDER</span>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

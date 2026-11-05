@@ -147,10 +147,44 @@ interface CartelContextType {
 
 const CartelContext = createContext<CartelContextType | undefined>(undefined);
 
+export const VALID_ROUTES: readonly AppRoute[] = [
+  '/',
+  '/lore',
+  '/hierarchy',
+  '/collection',
+  '/collection/detail',
+  '/vault',
+  '/utilities',
+  '/utilities/stock-endowment',
+  '/utilities/bounties',
+  '/utilities/patronage',
+  '/utilities/merit',
+  '/utilities/trading-desk',
+  '/utilities/ascension',
+  '/community',
+  '/member',
+];
+
+function resolveRouteFromLocation(): AppRoute {
+  if (typeof window === 'undefined') return '/';
+
+  // 1. Check URL hash first (e.g. #/lore) — works reliably on GitHub Pages subpaths
+  const rawHash = window.location.hash.replace(/^#/, '');
+  if (rawHash && (VALID_ROUTES as readonly string[]).includes(rawHash)) {
+    return rawHash as AppRoute;
+  }
+
+  // 2. Check pathname, stripping trailing slash or repo subpath if present
+  const rawPath = window.location.pathname.replace(/\/+$/, '') || '/';
+  if ((VALID_ROUTES as readonly string[]).includes(rawPath)) {
+    return rawPath as AppRoute;
+  }
+
+  return '/';
+}
+
 export const CartelProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const rawPath = typeof window !== 'undefined' ? window.location.pathname : '/';
-  const initialRoute: AppRoute = (rawPath && rawPath !== '/' ? rawPath : '/') as AppRoute;
-  const [route, setRouteState] = useState<AppRoute>(initialRoute);
+  const [route, setRouteState] = useState<AppRoute>(() => resolveRouteFromLocation());
   const [selectedNftDetail, setSelectedNftDetail] = useState<CartelNFT | null>(null);
   const [isConnected, setIsConnected] = useState<boolean>(false);
   const [selectedPersona, setSelectedPersona] = useState<WalletPersona | null>(null);
@@ -160,26 +194,29 @@ export const CartelProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   const [isGtdModalOpen, setIsGtdModalOpen] = useState<boolean>(false);
   const [notificationMessage, setNotificationMessage] = useState<string | null>(null);
 
-  // Sync route with browser history / URL path
+  // Sync route with browser history / URL hash so GitHub Pages (/selatron/) never 404s
   const setRoute = (newRoute: AppRoute) => {
     setRouteState(newRoute);
     window.scrollTo({ top: 0, behavior: 'smooth' });
     try {
-      window.history.pushState({}, '', newRoute);
+      const baseUrl = window.location.pathname;
+      const nextUrl = newRoute === '/' ? baseUrl : `${baseUrl}#${newRoute}`;
+      window.history.pushState({}, '', nextUrl);
     } catch {
       // Ignore in sandbox iframe if restricted
     }
   };
 
   useEffect(() => {
-    const handlePopState = () => {
-      const path = window.location.pathname as AppRoute;
-      if (path) {
-        setRouteState(path);
-      }
+    const handleNavigationChange = () => {
+      setRouteState(resolveRouteFromLocation());
     };
-    window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
+    window.addEventListener('popstate', handleNavigationChange);
+    window.addEventListener('hashchange', handleNavigationChange);
+    return () => {
+      window.removeEventListener('popstate', handleNavigationChange);
+      window.removeEventListener('hashchange', handleNavigationChange);
+    };
   }, []);
 
   const connectWallet = (personaId?: string) => {

@@ -50,12 +50,19 @@ export const Navbar: React.FC = () => {
       }`}
     >
       <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-14 flex items-center justify-between gap-6">
-        {/* Wordmark: DEADLOCK CARTEL */}
+        {/* Wordmark + Site Icon: DEADLOCK CARTEL */}
         <button
           onClick={() => handleNavClick('/')}
-          className="text-left cursor-pointer group shrink-0"
+          className="text-left cursor-pointer group shrink-0 flex items-center gap-3"
           aria-label="DEADLOCK CARTEL Homepage"
         >
+          <img
+            src="./deadlock-cartel-mark.svg"
+            alt=""
+            width={28}
+            height={28}
+            className="w-7 h-7 shrink-0"
+          />
           <span className="font-display font-normal text-lg sm:text-xl tracking-[0.22em] text-[#F4F0E8] group-hover:text-[#B69A67] transition-colors whitespace-nowrap">
             DEADLOCK CARTEL
           </span>

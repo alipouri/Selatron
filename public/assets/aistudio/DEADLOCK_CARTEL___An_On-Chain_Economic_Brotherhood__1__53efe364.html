@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DEADLOCK CARTEL — An On-Chain Economic Brotherhood</title>
+<meta name="description" content="DeadLock Cartel is an on-chain economic alliance of 3,333 NFTs on Robinhood Chain. Honor armed with leverage.">
+<meta property="og:title" content="DEADLOCK CARTEL">
+<meta property="og:description" content="An on-chain economic brotherhood. Honor armed with leverage.">
+<meta name="theme-color" content="#171717">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@400;500&display=swap">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{--obs:#171717;--char:#202020;--gr:#343434;--gold:#B69A67;--gold2:#8D7954;--iv:#E6DFD1;--wh:#F4F0E8;--st:#77736B;--mu:#A39E92;--hair:rgba(230,223,209,.14);--pad:clamp(20px,5vw,72px);--ease:cubic-bezier(.2,.7,.1,1);--serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;--sans:'Jost',system-ui,-apple-system,'Segoe UI',sans-serif;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(60px + env(safe-area-inset-top,0px));scroll-behavior:smooth;background:var(--obs)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:radial-gradient(120% 70% at 85% 0,var(--char) 0,var(--obs) 62%) var(--obs);color:var(--iv);font:400 16px/1.6 var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--obs);z-index:60}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:inherit}
+a{color:inherit}
+:focus-visible{outline:1px solid var(--gold);outline-offset:4px}
+h1,h2{font:300 clamp(40px,6.6vw,108px)/.94 var(--serif);margin:0;color:var(--wh)}
+h1{font-size:clamp(46px,12.4vw,196px);line-height:.86}
+p{margin:0}
+.hd{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:calc(18px + env(safe-area-inset-top,0px)) var(--pad) 18px;background:linear-gradient(var(--obs),rgba(23,23,23,0))}
+.wm{font:500 12px/1 var(--sans);letter-spacing:.34em;text-decoration:none;color:var(--wh);position:relative;z-index:2}
+#nav{display:flex;gap:clamp(16px,2.4vw,38px);margin-left:auto}
+#nav a{font:400 12px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--mu);transition:color .3s}
+#nav a:hover{color:var(--wh)}
+.pill{font:500 11px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;border:1px solid rgba(230,223,209,.35);padding:12px 18px;transition:background .3s,color .3s,border-color .3s}
+.pill:hover{background:var(--iv);color:var(--obs)}
+.mb{display:none;font:500 11px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;position:relative;z-index:2;padding:12px 0}
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;padding:0 var(--pad) clamp(48px,9vh,96px)}
+.fig{position:absolute;right:-4vw;top:50%;width:min(88vh,62vw);aspect-ratio:1;transform:translate3d(0,calc(-50% + var(--y,0px)),0) scale(var(--s,1));will-change:transform}
+.fig canvas{display:block;width:100%;height:100%}
+.hc{position:relative;z-index:2}
+.eye{font:500 12px/1.6 var(--sans);letter-spacing:.32em;text-transform:uppercase;color:var(--mu);margin-bottom:clamp(20px,3vh,32px)}
+.rule{height:1px;width:min(180px,30vw);background:var(--gold);margin:clamp(24px,4vh,40px) 0 18px;transform-origin:left}
+.js .rule{transform:scaleX(0)}
+.js .ready .rule{transform:none;transition:transform 1.3s var(--ease) .95s}
+.st{font:400 clamp(13px,1.45vw,18px)/1.5 var(--sans);letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.sup{color:var(--mu);max-width:34ch;margin-bottom:34px}
+.cta{display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-block;font:500 11px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;text-decoration:none;padding:18px 28px;border:1px solid rgba(230,223,209,.35);transition:background .3s,color .3s,border-color .3s}
+.btn.p{background:var(--iv);color:var(--obs);border-color:var(--iv)}
+.btn:hover{background:var(--gold);border-color:var(--gold);color:var(--obs)}
+.cap{margin-top:clamp(36px,7vh,72px);font-size:13px;color:var(--st);color:var(--mu);opacity:.8}
+.mk span{display:block;overflow:hidden;padding:.04em 0}
+.mk i{display:block;font-style:normal}
+.js .mk i{transform:translateY(108%);transition:transform 1.15s var(--ease)}
+.js .mk span:nth-child(2) i{transition-delay:.12s}
+.js .mk span:nth-child(3) i{transition-delay:.24s}
+.js .mk.in i{transform:none}
+.js .hero .mk i{transition-delay:.25s}
+.js .hero .mk span:nth-child(2) i{transition-delay:.4s}
+.js .cl{clip-path:inset(0 0 100% 0);transition:clip-path 1.5s var(--ease)}
+.js .cl.in{clip-path:inset(0)}
+.sec{position:relative;padding:clamp(88px,15vh,190px) var(--pad);overflow:hidden}
+.seal{position:absolute;left:-26vw;top:50%;width:96vw;max-width:1100px;aspect-ratio:1;transform:translateY(-50%);pointer-events:none}
+.mw{position:relative}
+.mx{margin:clamp(40px,8vh,96px) 0 0 auto;max-width:540px}
+.lead{font:300 clamp(22px,2.2vw,30px)/1.45 var(--serif);color:var(--iv);margin-bottom:24px}
+.fine{font-size:15px;color:var(--mu);max-width:46ch}
+.lnk{display:inline-block;margin-top:34px;font:500 11px/1.4 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--gold2);padding-bottom:8px}
+.lnk:hover{color:var(--wh);border-color:var(--wh)}
+.col{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,6vw,96px);align-items:center;margin-top:clamp(40px,8vh,88px)}
+.tiers{list-style:none;margin:0;padding:0;border-top:1px solid var(--hair)}
+.tiers li{border-bottom:1px solid var(--hair)}
+.tr{display:grid;grid-template-columns:minmax(72px,110px) 1fr auto;align-items:baseline;gap:16px;width:100%;padding:22px 0}
+.tn{font:300 clamp(28px,3.4vw,48px)/1 var(--serif);color:var(--wh)}
+.tm{font:500 12px/1.4 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--mu);transition:color .3s}
+.tv{font:300 clamp(22px,2.4vw,32px)/1 var(--serif);color:var(--iv)}
+.tr:hover .tm,.tr[aria-expanded=true] .tm{color:var(--gold)}
+.dt{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s var(--ease)}
+.dt>div{overflow:hidden;padding-left:clamp(72px,110px,110px)}
+.tr[aria-expanded=true]+.dt{grid-template-rows:1fr}
+.ro{font:400 italic 22px/1.3 var(--serif);color:var(--wh);margin-bottom:6px}
+.dt p:last-child{color:var(--mu);font-size:15px;max-width:44ch;padding-bottom:24px}
+.fg{margin:0}
+.fg canvas{display:block;width:100%;aspect-ratio:1;max-width:640px;margin:0 auto}
+.fg figcaption{font-size:13px;color:var(--mu);margin-top:16px;max-width:46ch}
+.eco{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(32px,7vw,110px);margin-top:clamp(40px,8vh,88px);align-items:start}
+.pl{list-style:none;margin:0;padding:0;border-top:1px solid var(--hair)}
+.pl li{display:grid;grid-template-columns:44px 1fr;gap:6px 12px;padding:24px 0;border-bottom:1px solid var(--hair)}
+.pl .no{font:400 12px/2.2 var(--sans);color:var(--st);color:var(--mu)}
+.pl button{font:300 clamp(24px,2.4vw,32px)/1.15 var(--serif);color:var(--wh);transition:color .3s}
+.pl button:hover{color:var(--gold)}
+.pl p{grid-column:2;color:var(--mu);font-size:15px;max-width:48ch}
+.vault{border:1px solid var(--hair);background:rgba(32,32,32,.7);padding:clamp(22px,3vw,40px)}
+.vh{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:28px;font:500 12px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--wh)}
+.chip{font-size:10px;letter-spacing:.18em;color:var(--gold);border:1px solid var(--gold2);padding:7px 10px}
+.vault dl{margin:0}
+.vault dl div{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-top:1px solid var(--hair)}
+.vault dt{color:var(--mu);font-size:14px}
+.vault dd{margin:0;font:300 26px/1 var(--serif);color:var(--st);color:var(--mu)}
+.vault .fine{margin-top:20px;font-size:13px}
+.end .mk{font-size:clamp(40px,7.2vw,120px)}
+.ft{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end;margin-top:clamp(48px,9vh,110px)}
+.ft dl{display:grid;grid-template-columns:auto 1fr;gap:10px 28px;margin:0}
+.ft dt{font:500 11px/1.8 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--mu)}
+.ft dd{margin:0;font-size:15px}
+footer{padding:28px var(--pad) 40px;border-top:1px solid var(--hair);font-size:13px;color:var(--mu);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+dialog{max-width:min(480px,calc(100vw - 40px));background:var(--char);color:var(--iv);border:1px solid var(--gold2);padding:32px}
+dialog::backdrop{background:rgba(10,10,10,.72)}
+dialog h3{font:300 30px/1.1 var(--serif);margin:0 0 14px;color:var(--wh)}
+dialog .chip{display:inline-block;margin-bottom:16px}
+dialog p{color:var(--mu);margin-bottom:24px}
+.sw{display:flex;border:1px solid var(--hair);width:max-content;max-width:100%;margin-top:clamp(32px,6vh,64px)}.sw button{font:500 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;padding:14px 18px;color:var(--mu);transition:background .3s,color .3s}.sw button[aria-pressed=true]{background:var(--iv);color:var(--obs)}.hb{display:flex;gap:2px;height:56px;margin:28px 0}.hb span{display:block;width:0;transition:width 1.2s var(--ease)}.hl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}.hl li{border-top:2px solid;padding-top:14px;display:grid;gap:6px}.hl span{font:500 12px/1.4 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--mu)}.hl b{font:300 clamp(20px,2.2vw,30px)/1.15 var(--serif);color:var(--wh)}#hs{margin-top:36px;max-width:30ch}.asc{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,6vw,96px);align-items:center;margin-top:clamp(40px,8vh,88px)}.stage{position:relative;aspect-ratio:1;width:100%;max-width:420px;margin:0 auto}.nd{position:absolute;left:50%;top:50%;width:44px;height:44px;margin:-22px;border-radius:50%;background:#8E897D;transform:translate(var(--x),var(--y));transition:transform 1.2s var(--ease),opacity .5s ease 1s}.stage.go .nd.r{transform:none;opacity:0}.nd.m{background:var(--iv);outline:1px solid var(--gold);outline-offset:10px;transform:scale(0);opacity:0;transition:transform 1s var(--ease) 1.3s,opacity .6s ease 1.3s}.stage.go .nd.m{transform:scale(1.7);opacity:1}.cnt{margin:24px 0}.cnt b{display:block;font:300 clamp(48px,7vw,96px)/1 var(--serif);color:var(--wh)}.cnt span{color:var(--mu);font-size:14px}.ap .btn{margin-right:14px;margin-bottom:14px}@media(max-width:860px){.asc{grid-template-columns:minmax(0,1fr)}.hl{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(prefers-reduced-motion:reduce){.nd,.hb span{transition:none!important}}
+@media(max-width:860px){
+#nav{display:none}
+.mb{display:block;margin-left:auto}
+.pill{display:none}
+body.open #nav{display:flex;position:fixed;inset:0;background:var(--obs);flex-direction:column;justify-content:center;gap:26px;padding:var(--pad)}
+body.open #nav a{font:300 36px/1 var(--serif);letter-spacing:0;text-transform:none;color:var(--wh)}
+.col,.eco,.ft{grid-template-columns:minmax(0,1fr)}
+.col .fg{order:-1}
+.fig{width:118vw;right:-34vw;top:38%;opacity:.6}
+.seal{left:-50vw;width:130vw;opacity:.8}
+.mx{margin-left:0}
+.dt>div{padding-left:0}
+.tr{grid-template-columns:64px 1fr auto}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+.mk i,.cl,.rule{transform:none!important;clip-path:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<header class="hd">
+  <a class="wm" href="#top">DEADLOCK CARTEL</a>
+  <nav id="nav" aria-label="Primary">
+    <a href="#manifesto">The Lore</a><a href="#hierarchy">Hierarchy</a><a href="#collection">Collection</a><a href="#vault">The Vault</a><a href="#ecosystem">Utilities</a><a href="#community">Community</a>
+  </nav>
+  <button class="pill" data-dlg="portal">Member Access</button>
+  <button class="mb" id="mb" aria-expanded="false" aria-controls="nav">Menu</button>
+</header>
+
+<main id="top">
+<section class="hero" id="hero">
+  <div class="fig"><canvas id="c1" role="img" aria-label="One circle of 3,333 points: 33 Kingpins at the centre, then 169 Godmothers, 469 Members and 2,662 Rookies"></canvas></div>
+  <div class="hc" id="hc">
+    <p class="eye">An on-chain economic brotherhood</p>
+    <h1 class="mk" id="mk1"><span><i>DEADLOCK</i></span><span><i>CARTEL.</i></span></h1>
+    <div class="rule"></div>
+    <p class="st">Honor armed with leverage.</p>
+    <p class="sup">An alliance built on unity, discipline and collective power.</p>
+    <div class="cta"><a class="btn p" href="#manifesto">Explore the Cartel</a><button class="btn" data-dlg="portal">Enter the Portal</button></div>
+    <p class="cap">Each point is one NFT. Four tiers, one form.</p>
+  </div>
+</section>
+
+<section class="sec" id="manifesto">
+  <svg class="seal cl" viewBox="0 0 1000 1000" aria-hidden="true" fill="none" stroke="#E6DFD1" stroke-opacity=".13"><circle cx="500" cy="500" r="48"/><circle cx="500" cy="500" r="118"/><circle cx="500" cy="500" r="215"/><circle cx="500" cy="500" r="480"/><circle cx="500" cy="500" r="5" fill="#B69A67" stroke="none"/></svg>
+  <div class="mw">
+    <h2 class="mk"><span><i>HONOR ARMED</i></span><span><i>WITH LEVERAGE.</i></span></h2>
+    <div class="mx">
+      <p class="lead">DeadLockCartel is an alliance of independent individuals, creators and traders, united around shared value, collective intelligence, mutual protection and a common economic treasury.</p>
+      <p class="fine">Wall Street had its cartels. Now, the everyday people have theirs. “Cartel” is a metaphor for an economic alliance, nothing more.</p>
+      <button class="lnk" data-route="/lore">Read the full manifesto →</button>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="collection">
+  <h2 class="mk"><span><i>3,333.</i></span><span><i>ONE ALLIANCE.</i></span></h2>
+  <div class="col">
+    <ol class="tiers" id="tiers"></ol>
+    <figure class="fg cl"><canvas id="c2" role="img" aria-label="The same circle of 3,333 points. Selecting a tier highlights its share of the alliance."></canvas>
+    <figcaption>Each point is one NFT. Official collection artwork has not been supplied for this build, so the alliance is drawn from its supply.</figcaption></figure>
+  </div>
+</section>
+
+<section class='sec' id='hierarchy'>
+<h2 class='mk'><span><i>THE WEIGHT OF</i></span><span><i>EVERY VOICE.</i></span></h2>
+<div class='sw' role='group' aria-label='Measure'><button data-m='count' aria-pressed='true'>By count</button><button data-m='votes' aria-pressed='false'>By voting power</button></div>
+<div class='hb' id='hbar' role='img' aria-label='Share of the alliance by tier'></div>
+<ul class='hl' id='hl'></ul>
+<p class='lead' id='hs' aria-live='polite'></p>
+<p class='fine'>Assumes the full supply of 3,333 with each NFT counted once. Shares will shift as Ascension burns reduce supply.</p>
+</section>
+
+<section class='sec' id='ascension'>
+<h2 class='mk'><span><i>THREE BECOME</i></span><span><i>ONE.</i></span></h2>
+<div class='asc'><div class='stage' id='stage' aria-hidden='true'><span class='nd r' style='--x:-130px;--y:70px'></span><span class='nd r' style='--x:130px;--y:70px'></span><span class='nd r' style='--x:0px;--y:-140px'></span><span class='nd m'></span></div>
+<div class='ap'><p class='lead'>Three Rookies in. One Member out. Each ascension reduces total supply by two.</p><p class='cnt' aria-live='polite'><b id='cn'>3,333</b><span>total supply, preview</span></p><button class='btn p' id='ab'>Preview ascension</button><span class='chip'>Preview only. No transaction is made.</span></div></div>
+</section>
+
+<section class="sec" id="ecosystem">
+  <h2 class="mk"><span><i>MORE THAN</i></span><span><i>OWNERSHIP.</i></span></h2>
+  <div class="eco">
+    <ol class="pl" id="pillars"></ol>
+    <aside class="vault cl" id="vault" aria-label="The Vault preview">
+      <div class="vh"><span>The Vault</span><span class="chip">Awaiting configuration</span></div>
+      <dl><div><dt>Total treasury value</dt><dd>—</dd></div><div><dt>Asset allocation</dt><dd>—</dd></div><div><dt>Historical performance</dt><dd>—</dd></div></dl>
+      <p class="fine">No treasury data is shown. A verified Safe wallet address and data source must be configured first. Tokenized assets are not direct legal ownership of underlying shares.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="sec end" id="community">
+  <h2 class="mk"><span><i>THE CARTEL</i></span><span><i>TAKES CARE</i></span><span><i>OF ITS OWN.</i></span></h2>
+  <div class="ft">
+    <dl>
+      <dt>Website</dt><dd><a href="https://deadlockcartel.xyz" target="_blank" rel="noopener">deadlockcartel.xyz</a></dd>
+      <dt>Social</dt><dd>@DeadLockCartel</dd>
+      <dt>Network</dt><dd>Robinhood Chain</dd>
+      <dt>Token</dt><dd>DLC</dd>
+    </dl>
+    <button class="btn p" data-dlg="portal">Enter the Portal</button>
+  </div>
+</section>
+</main>
+
+<footer>
+  <span>DEADLOCK CARTEL</span>
+  <span>Risk, tokenized-asset and legal disclosures: awaiting configuration.</span>
+</footer>
+
+<dialog id="dlg" aria-labelledby="dt">
+  <h3 id="dt"></h3><span class="chip" id="dc"></span><p id="db"></p>
+  <button class="btn" id="dx">Close</button>
+</dialog>
+
+<script>
+(()=>{
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $=s=>document.querySelector(s);
+const T=[
+{n:'Kingpins',c:33,v:'50×',role:'Apex Architects',d:'Strategic leaders. Eligible for special bounty rewards.',col:'#CDB27D',r:3.2,k:14},
+{n:'Godmothers',c:169,v:'15×',role:'Matriarchs of Stock Endowment',d:'Treasury and community welfare role. Holds a 100% mint rebate under the project brief; payment mechanics are not yet specified.',col:'#B69A67',r:2.1,k:10},
+{n:'Members',c:469,v:'5×',role:'Sworn Squad Captains',d:'Operational commanders. Each supervises approximately 5–6 Rookies.',col:'#E6DFD1',r:1.5,k:6},
+{n:'Rookies',c:2662,v:'1×',role:'Street Vanguard',d:'The community foundation, and the path to Member through the Ascension.',col:'#8E897D',r:1.15,k:3}];
+let n=0;
+T.forEach(t=>{t.p=[];for(let j=0;j<t.c;j++,n++){const q=Math.sqrt((n+.5)/3333),a=n*2.399963;t.p.push([q*Math.cos(a),q*Math.sin(a)])}});
+const seal=[33,202,671,3333].map(v=>Math.sqrt(v/3333));
+const mouse={x:0,y:0,tx:0,ty:0};
+addEventListener('pointermove',e=>{mouse.tx=e.clientX/innerWidth-.5;mouse.ty=e.clientY/innerHeight-.5},{passive:true});
+
+function Fig(cv){
+  const x=cv.getContext('2d'),al=[1,1,1,1];let S=0,hi=-1;
+  const f={vis:true,asm:1,
+    draw(t){
+      if(!S)return;
+      x.clearRect(0,0,S,S);
+      const R=S*.46,u=S/700,a=RM?0:t*1.2e-5,c=Math.cos(a),s=Math.sin(a);
+      x.save();x.translate(S/2,S/2);
+      x.strokeStyle='rgba(230,223,209,'+(.16*Math.min(1,Math.max(0,(f.asm-.75)/.25)))+')';x.lineWidth=1;
+      seal.forEach(q=>{x.beginPath();x.arc(0,0,q<1?R*q:R+12*u,0,6.2832);x.stroke()});
+      T.forEach((tr,k)=>{
+        const tg=hi<0||hi===k?(k===3&&hi<0?.8:1):.14;
+        al[k]=RM?tg:al[k]+(tg-al[k])*.12;
+        const ox=mouse.x*tr.k*u,oy=mouse.y*tr.k*u,r=tr.r*u;
+        x.globalAlpha=al[k];x.fillStyle=tr.col;x.beginPath();
+        const e=f.asm<1?Math.min(1,Math.max(0,(f.asm-[.45,.3,.15,0][k])/.55)):1,E=1-Math.pow(1-e,3);let j=0;
+        for(const [qx,qy] of tr.p){let px=qx,py=qy;if(e<1){let h=Math.sin((j+1)*12.9898+k*78.233)*43758.5453;h-=Math.floor(h);let g=Math.sin((j+1)*39.346+k*11.135)*43758.5453;g-=Math.floor(g);const an=h*6.2832,rd=.9+g*1.1;px=qx*E+Math.cos(an)*rd*(1-E);py=qy*E+Math.sin(an)*rd*(1-E)}j++;const X=(px*c-py*s)*R+ox,Y=(px*s+py*c)*R+oy;x.moveTo(X+r,Y);x.arc(X,Y,r,0,6.2832)}
+        x.fill();
+      });
+      x.restore();
+    },
+    fit(){const b=cv.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,innerWidth<760?1.5:2);S=b.width;cv.width=cv.height=Math.round(S*d);x.setTransform(d,0,0,d,0,0);f.draw(performance.now())},
+    set(k){hi=k;if(RM)f.draw(0)}
+  };
+  new ResizeObserver(f.fit).observe(cv);
+  new IntersectionObserver(e=>{f.vis=e[0].isIntersecting}).observe(cv);
+  return f;
+}
+const f1=Fig($('#c1')),f2=Fig($('#c2'));
+// Hero: scattered points converge, outer tiers first, Kingpins last, then the rings lock
+if(!RM){f1.asm=0;const t0=performance.now()+350;const ai=t=>{f1.asm=Math.min(1,Math.max(0,(t-t0)/2400));if(f1.asm<1)requestAnimationFrame(ai)};requestAnimationFrame(ai)}
+
+// Tiers: hover or focus previews a tier, click pins its details open
+const ol=$('#tiers');
+ol.innerHTML=T.map((t,k)=>`<li><button class="tr" aria-expanded="false" aria-controls="t${k}"><span class="tn">${t.c.toLocaleString('en-US')}</span><span class="tm">${t.n}</span><span class="tv">${t.v}</span></button><div class="dt" id="t${k}"><div><p class="ro">${t.role}</p><p>${t.d}</p></div></div></li>`).join('');
+let pin=-1;
+const btns=[...ol.querySelectorAll('.tr')];
+btns.forEach((b,k)=>{
+  b.addEventListener('mouseenter',()=>f2.set(k));
+  b.addEventListener('focus',()=>f2.set(k));
+  b.addEventListener('click',()=>{pin=pin===k?-1:k;btns.forEach((o,j)=>o.setAttribute('aria-expanded',j===pin));f2.set(pin)});
+});
+ol.addEventListener('mouseleave',()=>f2.set(pin));
+ol.addEventListener('focusout',()=>f2.set(pin));
+
+// Utilities
+const P=[['01','The Deadlock Stock Endowment','A shared treasury of tokenized stocks and digital assets, held in a transparent multisignature Safe.','stock-endowment'],
+['02','Instant Reveal Bounties','202 special rewards: 33 Kingpin bounties and 169 Godmother rebates.','bounties'],
+['03','The 4-Tier Patronage Protocol','One chain of command: 469 Members supervise 2,662 Rookies.','patronage'],
+['04','Proof-of-Merit & Cartel Grants','Merit-based rewards for education, analysis, content, art and community work.','merit'],
+['05','On-Site Trading Desk','Weekly proposals and weighted community voting, kept distinct from treasury execution.','trading-desk'],
+['06','The 3-for-1 Ascension Burn','Three Rookies become one Member. Each ascension reduces total supply by two.','ascension']];
+$('#pillars').innerHTML=P.map(p=>`<li><span class="no">${p[0]}</span><button ${p[3]==='ascension'?'data-go="#ascension"':`data-route="/utilities/${p[3]}"`}>${p[1]}</button><p>${p[2]}</p></li>`).join('');
+
+// Hierarchy: share of count vs share of voting power
+const hb=$('#hbar'),hl=$('#hl'),VP=T.map(t=>t.c*parseInt(t.v)),VT=VP.reduce((a,b)=>a+b),pc=v=>(v*100).toFixed(1);
+hb.innerHTML=T.map(t=>`<span style='background:${t.col}'></span>`).join('');
+hl.innerHTML=T.map(t=>`<li style='border-top-color:${t.col}'><span>${t.n}</span><b></b></li>`).join('');
+function mode(m){
+  document.querySelectorAll('.sw button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.m===m));
+  T.forEach((t,k)=>{const v=m==='votes'?VP[k]/VT:t.c/3333;hb.children[k].style.width=pc(v)+'%';hl.children[k].querySelector('b').textContent=pc(v)+'% · '+(m==='votes'?VP[k]:t.c).toLocaleString('en-US')+(m==='votes'?' votes':' NFTs')});
+  $('#hs').textContent=m==='votes'?`Rookies are ${pc(T[3].c/3333)}% of the NFTs but ${pc(VP[3]/VT)}% of the voting power.`:`Rookies are ${pc(T[3].c/3333)}% of the NFTs, the foundation of the alliance.`;
+}
+document.querySelectorAll('.sw button').forEach(b=>b.onclick=()=>mode(b.dataset.m));
+new IntersectionObserver((e,o)=>{if(e[0].isIntersecting){mode('count');o.disconnect()}}).observe(hb);
+
+// Ascension preview: three Rookies converge and dissolve, one Member appears, supply 3,333 to 3,331
+const stage=$('#stage'),ab=$('#ab'),cn=$('#cn');let up=false;
+const fmt=v=>v.toLocaleString('en-US');
+function count(a,b){if(RM){cn.textContent=fmt(b);return}const t0=performance.now()+(b<a?1000:300);const s=t=>{const p=Math.min(1,Math.max(0,(t-t0)/900));cn.textContent=fmt(Math.round(a+(b-a)*p));if(p<1)requestAnimationFrame(s)};requestAnimationFrame(s)}
+ab.onclick=()=>{up=!up;stage.classList.toggle('go',up);ab.textContent=up?'Reset preview':'Preview ascension';up?count(3333,3331):count(3331,3333)};
+document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>$(b.dataset.go).scrollIntoView({behavior:RM?'auto':'smooth'}));
+
+// Dialog
+const dlg=$('#dlg');
+function show(t,c,b){$('#dt').textContent=t;$('#dc').textContent=c;$('#dc').hidden=!c;$('#db').textContent=b;dlg.showModal()}
+document.addEventListener('click',e=>{
+  const el=e.target.closest('[data-dlg],[data-route]');
+  if(!el)return;
+  if(el.dataset.dlg==='portal')show('Member Access','Not connected · Awaiting configuration','Wallet authentication is not set up in this build. The Robinhood Chain network settings and the NFT contract address have not been supplied, so no wallet connection or member data is available yet.');
+  else show('Not published yet','Unavailable',`The ${el.dataset.route} page belongs to the full build and is not part of this homepage.`);
+});
+$('#dx').onclick=()=>dlg.close();
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+
+// Mobile menu
+const mb=$('#mb');
+const menu=o=>{document.body.classList.toggle('open',o);mb.setAttribute('aria-expanded',o);mb.textContent=o?'Close':'Menu'};
+mb.onclick=()=>menu(!document.body.classList.contains('open'));
+document.querySelectorAll('#nav a').forEach(a=>a.addEventListener('click',()=>menu(false)));
+addEventListener('keydown',e=>{if(e.key==='Escape')menu(false)});
+
+// Reveals: opening sequence, then masks and clips as sections arrive
+const hero=$('#hero'),hc=$('#hc');
+setTimeout(()=>{hero.classList.add('ready');$('#mk1').classList.add('in')},120);
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.2});
+document.querySelectorAll('.mk:not(#mk1),.cl').forEach(el=>io.observe(el));
+
+// One loop: pointer easing, slow drift, scroll-driven hero composition
+if(!RM){
+  const loop=t=>{
+    mouse.x+=(mouse.tx-mouse.x)*.06;mouse.y+=(mouse.ty-mouse.y)*.06;
+    const p=Math.min(scrollY/innerHeight,1);
+    hero.style.setProperty('--y',p*70+'px');hero.style.setProperty('--s',1+p*.07);
+    hc.style.opacity=1-p*.85;
+    if(f1.vis)f1.draw(t);if(f2.vis)f2.draw(t);
+    requestAnimationFrame(loop);
+  };
+  requestAnimationFrame(loop);
+}
+})();
+</script>
+</body>
+</html>
