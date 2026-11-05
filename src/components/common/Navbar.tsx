@@ -57,7 +57,7 @@ export const Navbar: React.FC = () => {
           aria-label="DEADLOCK CARTEL Homepage"
         >
           <img
-            src="./deadlock-cartel-mark.svg"
+            src="./assets/aistudio/deadlock-cartel-icon_7bcaed83.svg"
             alt=""
             width={28}
             height={28}

@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-5 space-y-3">
             <div className="flex items-center gap-3 font-display text-lg tracking-[0.22em] text-[#F4F0E8]">
               <img
-                src="./deadlock-cartel-mark.svg"
+                src="./assets/aistudio/deadlock-cartel-icon_7bcaed83.svg"
                 alt=""
                 width={26}
                 height={26}
