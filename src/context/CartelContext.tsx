@@ -30,169 +30,85 @@ export interface WalletPersona {
 export const PRESET_PERSONAS: WalletPersona[] = [
   {
     id: 'kingpin-holder',
-    label: 'Apex Architect (Kingpin)',
-    address: '0x33A7...49F2',
+    label: 'Preview Mode: Kingpin (50x)',
+    address: 'AWAITING CONFIGURATION',
     tier: 'kingpin',
     ownedNfts: [
       {
-        tokenId: 14,
+        tokenId: 1,
         tier: 'kingpin',
-        name: 'DeadLock Kingpin #14',
-        status: 'REVEALED',
-        traits: { suit: 'Bespoke Charcoal Pinstripe', coat: 'Cashmere Heavy Overcoat', jewelry: 'Antique Gold Signet Ring', accessory: 'Cartel Seal Cane' },
+        name: 'Kingpin Placeholder #01',
+        status: 'SEALED',
+        traits: { suit: 'Artwork Placeholder — Unpublished' },
         revealBountyEligible: true
-      },
-      {
-        tokenId: 840,
-        tier: 'member',
-        name: 'DeadLock Member #840',
-        status: 'REVEALED',
-        traits: { suit: 'Tactical Navy Wool', accessory: 'Squad Commander Insignia', squadRole: 'Alpha Cohort Lead' }
       }
     ]
   },
   {
     id: 'godmother-holder',
-    label: 'Matriarch (Godmother)',
-    address: '0x88C1...E209',
+    label: 'Preview Mode: Godmother (15x)',
+    address: 'AWAITING CONFIGURATION',
     tier: 'godmother',
     ownedNfts: [
       {
-        tokenId: 72,
+        tokenId: 34,
         tier: 'godmother',
-        name: 'DeadLock Godmother #72',
-        status: 'REVEALED',
-        traits: { suit: 'Structured Silk Crepe Suit', coat: 'Midnight Double-Faced Wool', jewelry: 'Cartel Sigil Pendant', accessory: 'Safe Multisig Key Holder' },
+        name: 'Godmother Placeholder #34',
+        status: 'SEALED',
+        traits: { suit: 'Artwork Placeholder — Unpublished' },
         revealBountyEligible: true
       }
     ]
   },
   {
     id: 'member-holder',
-    label: 'Squad Captain (Member)',
-    address: '0x49B2...7A18',
+    label: 'Preview Mode: Member (5x)',
+    address: 'AWAITING CONFIGURATION',
     tier: 'member',
     ownedNfts: [
       {
-        tokenId: 295,
+        tokenId: 203,
         tier: 'member',
-        name: 'DeadLock Member #295',
-        status: 'REVEALED',
-        traits: { suit: 'Charcoal Minimalist Suit', accessory: 'Squad 19 Lead Insignia', squadRole: 'Squad Captain' }
+        name: 'Member Placeholder #203',
+        status: 'SEALED',
+        traits: { suit: 'Artwork Placeholder — Unpublished', squadRole: 'Sworn Squad Captain' }
       }
     ]
   },
   {
     id: 'rookie-holder',
-    label: 'Street Vanguard (Rookie)',
-    address: '0x71F3...902A',
+    label: 'Preview Mode: Rookie (1x)',
+    address: 'AWAITING CONFIGURATION',
     tier: 'rookie',
     ownedNfts: [
       {
         tokenId: 1204,
         tier: 'rookie',
-        name: 'DeadLock Rookie #1204',
-        status: 'REVEALED',
-        traits: { suit: 'Layered Tech Hoodie', coat: 'Matte Black Anorak', accessory: 'Cartel Keycard' }
+        name: 'Rookie Placeholder #1204',
+        status: 'SEALED',
+        traits: { suit: 'Artwork Placeholder — Unpublished' }
       },
       {
         tokenId: 1205,
         tier: 'rookie',
-        name: 'DeadLock Rookie #1205',
-        status: 'REVEALED',
-        traits: { suit: 'Urban Heavy Fleece', coat: 'Structured Trench', accessory: 'Tactical Radio' }
+        name: 'Rookie Placeholder #1205',
+        status: 'SEALED',
+        traits: { suit: 'Artwork Placeholder — Unpublished' }
       },
       {
         tokenId: 1206,
         tier: 'rookie',
-        name: 'DeadLock Rookie #1206',
-        status: 'REVEALED',
-        traits: { suit: 'Utility Overshirt', coat: 'Quilted Vest', accessory: 'Vanguard Tag' }
+        name: 'Rookie Placeholder #1206',
+        status: 'SEALED',
+        traits: { suit: 'Artwork Placeholder — Unpublished' }
       }
     ]
   }
 ];
 
-export const INITIAL_PROPOSALS: GovernanceProposal[] = [
-  {
-    id: 'DLP-014',
-    title: 'Proposal #014: Allocate Treasury Inflow to NVDA Tokenized Stock',
-    description: 'Authorize the deployment of 50% secondary royalty accumulations into NVDA synthetic tokenized equity on Robinhood Chain upon Safe contract activation.',
-    proposer: '0x33A7...49F2 (Kingpin #14)',
-    proposerTier: 'kingpin',
-    targetAsset: 'NVDA Tokenized Stock',
-    actionType: 'STOCK_PURCHASE',
-    status: 'ACTIVE',
-    executionStatus: 'SNAPSHOT_OFFCHAIN_VOTE',
-    deadline: 'In 3 Days',
-    votesFor: 4850,
-    votesAgainst: 120
-  },
-  {
-    id: 'DLP-013',
-    title: 'Proposal #013: Ratify 1% Captain Cut Settlement Smart Contract Spec',
-    description: 'Off-chain consensus on automated execution parameter of the 1% Squad Captain commission on Rookie Ascension transformations.',
-    proposer: '0x88C1...E209 (Godmother #72)',
-    proposerTier: 'godmother',
-    targetAsset: 'Governance Parameter',
-    actionType: 'TREASURY_POLICY',
-    status: 'ACTIVE',
-    executionStatus: 'SNAPSHOT_OFFCHAIN_VOTE',
-    deadline: 'In 5 Days',
-    votesFor: 3210,
-    votesAgainst: 45
-  },
-  {
-    id: 'DLP-012',
-    title: 'Proposal #012: Initial Allocation Pool for Tokenized SPY Exposure',
-    description: 'Off-chain signaling vote on core index weighting strategy inside the DeadLock Stock Endowment safe wallet.',
-    proposer: '0x49B2...7A18 (Member #295)',
-    proposerTier: 'member',
-    targetAsset: 'SPY Tokenized Exposure',
-    actionType: 'STOCK_PURCHASE',
-    status: 'PASSED',
-    executionStatus: 'AWAITING_TREASURY_EXECUTION',
-    deadline: 'Closed Oct 28',
-    votesFor: 12400,
-    votesAgainst: 310
-  }
-];
+export const INITIAL_PROPOSALS: GovernanceProposal[] = [];
 
-export const INITIAL_CONTRIBUTIONS: MeritContribution[] = [
-  {
-    id: 'MERIT-108',
-    category: 'MARKET_ANALYSIS',
-    title: 'Robinhood Chain Tokenized Equities: Liquidity & Custody Risk Breakdown',
-    author: 'Vanguard_Analyst (Rookie #1204)',
-    authorTier: 'rookie',
-    date: 'Nov 02, 2026',
-    status: 'APPROVED',
-    rewardStatus: 'AWAITING ON-CHAIN DATA',
-    summary: 'A 24-page analytical breakdown comparing synthetic stock tokens to direct custodian models on EVM rails.'
-  },
-  {
-    id: 'MERIT-109',
-    category: 'SQUAD_MANAGEMENT',
-    title: 'Squad 19 Operational Curriculum: Week 4 Options Strategy Bootcamp',
-    author: 'Captain_M295 (Member #295)',
-    authorTier: 'member',
-    date: 'Nov 03, 2026',
-    status: 'EVALUATING',
-    rewardStatus: 'AWAITING ON-CHAIN DATA',
-    summary: 'Structured curriculum and 6-week mentorship track for squad apprentices on market mechanics.'
-  },
-  {
-    id: 'MERIT-110',
-    category: 'TOOLING',
-    title: 'DeadLock Safe Multisig Watcher & Gasless Offchain Webhook Service',
-    author: 'DevProtector (Rookie #1205)',
-    authorTier: 'rookie',
-    date: 'Nov 04, 2026',
-    status: 'PENDING_REVIEW',
-    rewardStatus: 'AWAITING ON-CHAIN DATA',
-    summary: 'Open-source telemetry relay notifying Cartel Discord and portal members whenever Safe proposals update.'
-  }
-];
+export const INITIAL_CONTRIBUTIONS: MeritContribution[] = [];
 
 interface CartelContextType {
   route: AppRoute;
@@ -236,8 +152,8 @@ export const CartelProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   const initialRoute: AppRoute = (rawPath && rawPath !== '/' ? rawPath : '/') as AppRoute;
   const [route, setRouteState] = useState<AppRoute>(initialRoute);
   const [selectedNftDetail, setSelectedNftDetail] = useState<CartelNFT | null>(null);
-  const [isConnected, setIsConnected] = useState<boolean>(true);
-  const [selectedPersona, setSelectedPersona] = useState<WalletPersona | null>(PRESET_PERSONAS[0]);
+  const [isConnected, setIsConnected] = useState<boolean>(false);
+  const [selectedPersona, setSelectedPersona] = useState<WalletPersona | null>(null);
   const [completedAscensions, setCompletedAscensions] = useState<number>(0);
   const [proposals, setProposals] = useState<GovernanceProposal[]>(INITIAL_PROPOSALS);
   const [contributions, setContributions] = useState<MeritContribution[]>(INITIAL_CONTRIBUTIONS);

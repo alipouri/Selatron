@@ -72,7 +72,7 @@ export const MemberPortal: React.FC = () => {
         <h1 className="text-3xl font-display font-bold text-[#F4F0E8]">
           PRIVATE MEMBER ACCESS
         </h1>
-        <p className="text-xs text-[#77736B] leading-relaxed">
+        <p className="text-xs text-[#A39E92] leading-relaxed">
           The Private Headquarters is accessible only to verified holders on the Robinhood Chain. Connect your EVM wallet or select a simulated persona to inspect member functionality.
         </p>
 
@@ -88,7 +88,7 @@ export const MemberPortal: React.FC = () => {
                 className="p-3 bg-[#181818] border border-[#272727] hover:border-[#B69A67] text-left rounded-sm transition-all cursor-pointer"
               >
                 <div className="text-xs font-semibold text-[#F4F0E8]">{p.label}</div>
-                <div className="text-[10px] font-mono text-[#77736B] mt-0.5">{p.address}</div>
+                <div className="text-[10px] font-mono text-[#A39E92] mt-0.5">{p.address}</div>
               </button>
             ))}
           </div>
@@ -97,7 +97,7 @@ export const MemberPortal: React.FC = () => {
         <div className="pt-6">
           <button
             onClick={() => setRoute('/')}
-            className="text-xs text-[#77736B] hover:text-[#E6DFD1] transition-colors inline-flex items-center gap-1.5 cursor-pointer"
+            className="text-xs text-[#A39E92] hover:text-[#E6DFD1] transition-colors inline-flex items-center gap-1.5 cursor-pointer"
           >
             <Home size={14} />
             <span>Return to Public Website</span>
@@ -140,12 +140,12 @@ export const MemberPortal: React.FC = () => {
               <div className="w-2 h-2 rounded-full bg-[#B69A67]" />
               <span className="font-mono text-[#F4F0E8] font-medium hidden sm:inline">{selectedPersona.label}</span>
               <span className="font-mono text-[#F4F0E8] font-medium sm:hidden">{selectedPersona.tier.toUpperCase()}</span>
-              <ChevronDown size={14} className="text-[#77736B]" />
+              <ChevronDown size={14} className="text-[#A39E92]" />
             </button>
 
             {isPersonaMenuOpen && (
               <div className="absolute right-0 mt-2 w-64 bg-[#1a1a1a] border border-[#333] shadow-2xl rounded-sm py-2 z-50 animate-in fade-in duration-150">
-                <div className="px-3 py-1.5 text-[10px] font-mono uppercase text-[#77736B] border-b border-[#242424]">
+                <div className="px-3 py-1.5 text-[10px] font-mono uppercase text-[#A39E92] border-b border-[#242424]">
                   Simulate Membership Rank:
                 </div>
                 {PRESET_PERSONAS.map((p) => (
@@ -160,7 +160,7 @@ export const MemberPortal: React.FC = () => {
                     }`}
                   >
                     <span>{p.label}</span>
-                    <span className="font-mono text-[10px] text-[#77736B]">{p.tier}</span>
+                    <span className="font-mono text-[10px] text-[#A39E92]">{p.tier}</span>
                   </button>
                 ))}
                 <div className="border-t border-[#242424] mt-1 pt-1">
@@ -180,7 +180,7 @@ export const MemberPortal: React.FC = () => {
 
           <button
             onClick={() => setRoute('/')}
-            className="px-3 py-1.5 text-xs text-[#77736B] hover:text-[#F4F0E8] transition-colors cursor-pointer border border-transparent hover:border-[#292929] rounded-sm"
+            className="px-3 py-1.5 text-xs text-[#A39E92] hover:text-[#F4F0E8] transition-colors cursor-pointer border border-transparent hover:border-[#292929] rounded-sm"
           >
             Public Site
           </button>
@@ -194,12 +194,12 @@ export const MemberPortal: React.FC = () => {
           <div className="space-y-6">
             {/* User Identity Card */}
             <div className="p-3.5 bg-[#121212] border border-[#242424] rounded-sm space-y-1">
-              <span className="text-[10px] font-mono uppercase text-[#77736B] block">Protector Identity</span>
+              <span className="text-[10px] font-mono uppercase text-[#A39E92] block">Protector Identity</span>
               <div className="font-display font-bold text-sm text-[#F4F0E8] flex items-center justify-between">
                 <span>{tier.name}</span>
                 <span className="text-xs font-mono text-[#B69A67]">{tier.votingPower}x</span>
               </div>
-              <div className="text-[11px] font-mono text-[#77736B] truncate">
+              <div className="text-[11px] font-mono text-[#A39E92] truncate">
                 {selectedPersona.address}
               </div>
             </div>
@@ -216,10 +216,10 @@ export const MemberPortal: React.FC = () => {
                     className={`w-full flex items-center gap-3 px-3.5 py-2.5 text-xs rounded-sm transition-all text-left cursor-pointer ${
                       isActive
                         ? 'bg-[#222222] text-[#F4F0E8] border border-[#333] font-semibold'
-                        : 'text-[#77736B] hover:text-[#E6DFD1] hover:bg-[#1a1a1a]'
+                        : 'text-[#A39E92] hover:text-[#E6DFD1] hover:bg-[#1a1a1a]'
                     }`}
                   >
-                    <Icon size={16} className={isActive ? 'text-[#B69A67]' : 'text-[#77736B]'} />
+                    <Icon size={16} className={isActive ? 'text-[#B69A67]' : 'text-[#A39E92]'} />
                     <span>{item.label}</span>
                   </button>
                 );
@@ -228,7 +228,7 @@ export const MemberPortal: React.FC = () => {
           </div>
 
           {/* Quick Metrics */}
-          <div className="pt-6 border-t border-[#222222] space-y-2 text-[11px] font-mono text-[#77736B]">
+          <div className="pt-6 border-t border-[#222222] space-y-2 text-[11px] font-mono text-[#A39E92]">
             <div className="flex justify-between">
               <span>Collection Supply</span>
               <span className="text-[#F4F0E8] tabular-nums">{currentSupply} / 3,333</span>
@@ -256,7 +256,7 @@ export const MemberPortal: React.FC = () => {
                     COMMAND OVERVIEW
                   </h1>
                 </div>
-                <div className="text-xs font-mono text-[#77736B]">
+                <div className="text-xs font-mono text-[#A39E92]">
                   Logged as: <strong className="text-[#E6DFD1]">{selectedPersona.label}</strong>
                 </div>
               </div>
@@ -264,27 +264,27 @@ export const MemberPortal: React.FC = () => {
               {/* 4 KPI Metrics */}
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                 <div className="p-5 bg-[#181818] border border-[#272727] rounded-sm space-y-1">
-                  <span className="text-[11px] font-mono text-[#77736B] uppercase">Connected Rank</span>
+                  <span className="text-[11px] font-mono text-[#A39E92] uppercase">Connected Rank</span>
                   <div className="text-lg font-display font-bold text-[#F4F0E8]">{tier.name}</div>
                   <span className="text-[10px] font-mono text-[#B69A67]">{tier.code}</span>
                 </div>
 
                 <div className="p-5 bg-[#181818] border border-[#272727] rounded-sm space-y-1">
-                  <span className="text-[11px] font-mono text-[#77736B] uppercase">Voting Power</span>
+                  <span className="text-[11px] font-mono text-[#A39E92] uppercase">Voting Power</span>
                   <div className="text-xl font-mono font-bold text-[#B69A67] tabular-nums">{tier.votingPower}x Weight</div>
-                  <span className="text-[10px] font-mono text-[#77736B]">Snapshot Signatures</span>
+                  <span className="text-[10px] font-mono text-[#A39E92]">Snapshot Signatures</span>
                 </div>
 
                 <div className="p-5 bg-[#181818] border border-[#272727] rounded-sm space-y-1">
-                  <span className="text-[11px] font-mono text-[#77736B] uppercase">Owned Cartel NFTs</span>
+                  <span className="text-[11px] font-mono text-[#A39E92] uppercase">Owned Cartel NFTs</span>
                   <div className="text-xl font-mono font-bold text-[#F4F0E8] tabular-nums">
                     {selectedPersona.ownedNfts.length} Assets
                   </div>
-                  <span className="text-[10px] font-mono text-[#77736B]">Verified in Wallet</span>
+                  <span className="text-[10px] font-mono text-[#A39E92]">Verified in Wallet</span>
                 </div>
 
                 <div className="p-5 bg-[#181818] border border-[#272727] rounded-sm space-y-1">
-                  <span className="text-[11px] font-mono text-[#77736B] uppercase">Stock Endowment</span>
+                  <span className="text-[11px] font-mono text-[#A39E92] uppercase">Stock Endowment</span>
                   <div className="text-xs font-mono text-[#E6DFD1] pt-1">AWAITING ON-CHAIN DATA</div>
                   <span className="text-[10px] font-mono text-[#8D7954]">Safe Multisig</span>
                 </div>
@@ -296,7 +296,7 @@ export const MemberPortal: React.FC = () => {
                   <h3 className="text-sm font-display font-bold text-[#F4F0E8] uppercase tracking-wider">
                     Quick Governance Actions
                   </h3>
-                  <p className="text-xs text-[#77736B] leading-relaxed">
+                  <p className="text-xs text-[#A39E92] leading-relaxed">
                     {proposals.filter((p) => p.status === 'ACTIVE' && !p.userVoted).length} active weekly stock purchase proposals are awaiting your signed vote on Robinhood Chain.
                   </p>
                   <button
@@ -311,7 +311,7 @@ export const MemberPortal: React.FC = () => {
                   <h3 className="text-sm font-display font-bold text-[#F4F0E8] uppercase tracking-wider">
                     Ascension Protocol Status
                   </h3>
-                  <p className="text-xs text-[#77736B] leading-relaxed">
+                  <p className="text-xs text-[#A39E92] leading-relaxed">
                     You hold {selectedPersona.ownedNfts.filter((n) => n.tier === 'rookie').length} Rookie NFTs. Three rookies can be burned into the crucible to forge one Member rank NFT.
                   </p>
                   <button
@@ -339,13 +339,13 @@ export const MemberPortal: React.FC = () => {
                     MY COLLECTION ({selectedPersona.ownedNfts.length})
                   </h1>
                 </div>
-                <div className="text-xs font-mono text-[#77736B]">
+                <div className="text-xs font-mono text-[#A39E92]">
                   Connected Wallet: <strong className="text-[#E6DFD1]">{selectedPersona.address}</strong>
                 </div>
               </div>
 
               {selectedPersona.ownedNfts.length === 0 ? (
-                <div className="p-12 text-center border border-dashed border-[#262626] rounded-sm text-xs text-[#77736B]">
+                <div className="p-12 text-center border border-dashed border-[#262626] rounded-sm text-xs text-[#A39E92]">
                   No NFTs currently detected in this connected wallet address.
                 </div>
               ) : (
@@ -360,7 +360,7 @@ export const MemberPortal: React.FC = () => {
                       </div>
 
                       <div className="space-y-1.5">
-                        <div className="flex items-center justify-between text-xs font-mono text-[#77736B]">
+                        <div className="flex items-center justify-between text-xs font-mono text-[#A39E92]">
                           <span className="uppercase text-[#B69A67]">{nft.tier}</span>
                           <span>ID #{nft.tokenId}</span>
                         </div>
@@ -368,12 +368,12 @@ export const MemberPortal: React.FC = () => {
 
                         <div className="pt-2 grid grid-cols-2 gap-1.5 text-[11px]">
                           {nft.traits.suit && (
-                            <div className="p-1.5 bg-[#141414] border border-[#222] rounded-xs text-[#77736B] truncate">
+                            <div className="p-1.5 bg-[#141414] border border-[#222] rounded-xs text-[#A39E92] truncate">
                               {nft.traits.suit}
                             </div>
                           )}
                           {nft.traits.accessory && (
-                            <div className="p-1.5 bg-[#141414] border border-[#222] rounded-xs text-[#77736B] truncate">
+                            <div className="p-1.5 bg-[#141414] border border-[#222] rounded-xs text-[#A39E92] truncate">
                               {nft.traits.accessory}
                             </div>
                           )}
@@ -403,79 +403,78 @@ export const MemberPortal: React.FC = () => {
           {/* ========================================================================= */}
           {activeTab === 'trading-desk' && (
             <div className="space-y-8 animate-in fade-in duration-200">
-              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-[#242424]">
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-[rgba(230,223,209,0.14)]">
                 <div>
                   <span className="text-xs font-mono uppercase tracking-widest text-[#B69A67]">
                     GOVERNANCE & ASSET PURCHASES
                   </span>
-                  <h1 className="text-2xl sm:text-3xl font-display font-bold text-[#F4F0E8]">
+                  <h1 className="text-2xl sm:text-3xl font-display font-light text-[#F4F0E8]">
                     THE TRADING DESK
                   </h1>
                 </div>
-                <div className="text-xs font-mono text-[#B69A67] px-3 py-1 bg-[#1e1c18] border border-[#382f1f] rounded-sm">
+                <div className="text-xs font-mono text-[#B69A67] px-3 py-1 bg-[#202020] border border-[rgba(230,223,209,0.14)]">
                   Active Voting Weight: {tier.votingPower}x ({tier.name})
                 </div>
               </div>
 
-              {/* Proposals List */}
               <div className="space-y-6">
-                {proposals.map((prop) => {
-                  const totalVotes = prop.votesFor + prop.votesAgainst;
-                  const forPercent = totalVotes > 0 ? Math.round((prop.votesFor / totalVotes) * 100) : 0;
-
-                  return (
-                    <div key={prop.id} className="p-6 bg-[#181818] border border-[#272727] rounded-sm space-y-4">
-                      <div className="flex flex-wrap items-center justify-between gap-4">
-                        <div className="flex items-center gap-2 text-xs font-mono text-[#B69A67]">
-                          <span>{prop.id}</span>
-                          <span>·</span>
-                          <span className="text-[#77736B]">{prop.targetAsset}</span>
-                        </div>
-                        <span className="text-xs font-mono text-[#77736B]">{prop.deadline}</span>
-                      </div>
-
-                      <h3 className="text-base font-display font-bold text-[#F4F0E8]">{prop.title}</h3>
-                      <p className="text-xs text-[#77736B] leading-relaxed">{prop.description}</p>
-
-                      <div className="space-y-1 pt-2">
-                        <div className="flex justify-between text-xs font-mono">
-                          <span className="text-[#E6DFD1]">For: {prop.votesFor.toLocaleString()} ({forPercent}%)</span>
-                          <span className="text-[#77736B]">Against: {prop.votesAgainst.toLocaleString()}</span>
-                        </div>
-                        <div className="w-full h-2 bg-[#141414] rounded-full overflow-hidden flex">
-                          <div className="bg-[#B69A67] h-full" style={{ width: `${forPercent}%` }} />
-                          <div className="bg-[#562C32] h-full" style={{ width: `${100 - forPercent}%` }} />
-                        </div>
-                      </div>
-
-                      <div className="pt-4 border-t border-[#222222] flex items-center justify-between">
-                        <span className="text-[11px] font-mono text-[#77736B]">
-                          Snapshot Off-Chain Signature
-                        </span>
-                        {prop.userVoted ? (
-                          <span className="text-xs font-mono text-[#B69A67] bg-[#221f19] px-3 py-1 border border-[#3b3220] rounded-sm">
-                            Voted: {prop.userVoted}
-                          </span>
-                        ) : (
-                          <div className="flex items-center gap-2">
-                            <button
-                              onClick={() => castVote(prop.id, 'FOR')}
-                              className="px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#171717] bg-[#B69A67] hover:bg-[#c5a975] rounded-sm transition-colors cursor-pointer"
-                            >
-                              Vote For ({tier.votingPower}x)
-                            </button>
-                            <button
-                              onClick={() => castVote(prop.id, 'AGAINST')}
-                              className="px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#E6DFD1] bg-[#222222] hover:bg-[#2b2b2b] border border-[#2e2e2e] rounded-sm transition-colors cursor-pointer"
-                            >
-                              Vote Against
-                            </button>
-                          </div>
-                        )}
-                      </div>
+                {proposals.length === 0 ? (
+                  <div className="p-8 bg-[#181818] border border-[rgba(230,223,209,0.14)] space-y-2">
+                    <div className="text-xs font-mono uppercase tracking-[0.22em] text-[#B69A67]">
+                      AWAITING CONFIGURATION
                     </div>
-                  );
-                })}
+                    <p className="text-xs text-[#A39E92] leading-relaxed">
+                      Snapshot governance space is awaiting configuration. Note: Snapshot votes are off-chain signals and do not trigger automatic treasury execution.
+                    </p>
+                  </div>
+                ) : (
+                  proposals.map((prop) => {
+                    const totalVotes = prop.votesFor + prop.votesAgainst;
+                    const forPercent = totalVotes > 0 ? Math.round((prop.votesFor / totalVotes) * 100) : 0;
+
+                    return (
+                      <div key={prop.id} className="p-6 bg-[#181818] border border-[rgba(230,223,209,0.14)] space-y-4">
+                        <div className="flex flex-wrap items-center justify-between gap-4">
+                          <div className="flex items-center gap-2 text-xs font-mono text-[#B69A67]">
+                            <span>{prop.id}</span>
+                            <span>·</span>
+                            <span className="text-[#A39E92]">{prop.targetAsset}</span>
+                          </div>
+                          <span className="text-xs font-mono text-[#A39E92]">{prop.deadline}</span>
+                        </div>
+
+                        <h3 className="text-base font-display text-[#F4F0E8]">{prop.title}</h3>
+                        <p className="text-xs text-[#A39E92] leading-relaxed">{prop.description}</p>
+
+                        <div className="pt-4 border-t border-[rgba(230,223,209,0.14)] flex items-center justify-between">
+                          <span className="text-[11px] font-mono text-[#A39E92]">
+                            Snapshot Off-Chain Signature ({forPercent}%)
+                          </span>
+                          {prop.userVoted ? (
+                            <span className="text-xs font-mono text-[#B69A67] px-3 py-1 border border-[rgba(230,223,209,0.14)]">
+                              Voted: {prop.userVoted}
+                            </span>
+                          ) : (
+                            <div className="flex items-center gap-2">
+                              <button
+                                onClick={() => castVote(prop.id, 'FOR')}
+                                className="px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#171717] bg-[#B69A67] hover:bg-[#8D7954] transition-colors cursor-pointer"
+                              >
+                                Vote For ({tier.votingPower}x)
+                              </button>
+                              <button
+                                onClick={() => castVote(prop.id, 'AGAINST')}
+                                className="px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#E6DFD1] bg-[#202020] border border-[rgba(230,223,209,0.14)] transition-colors cursor-pointer"
+                              >
+                                Vote Against
+                              </button>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })
+                )}
               </div>
             </div>
           )}
@@ -485,71 +484,46 @@ export const MemberPortal: React.FC = () => {
           {/* ========================================================================= */}
           {activeTab === 'squad' && (
             <div className="space-y-8 animate-in fade-in duration-200">
-              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-[#242424]">
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-[rgba(230,223,209,0.14)]">
                 <div>
                   <span className="text-xs font-mono uppercase tracking-widest text-[#B69A67]">
                     PATRONAGE CADRE
                   </span>
-                  <h1 className="text-2xl sm:text-3xl font-display font-bold text-[#F4F0E8]">
-                    MY SQUAD (COHORT ALPHA-19)
+                  <h1 className="text-2xl sm:text-3xl font-display font-light text-[#F4F0E8]">
+                    SQUAD ASSIGNMENT
                   </h1>
                 </div>
                 <div className="text-xs font-mono text-[#8D7954]">
-                  Supervision: 6 Rookies · 1% Captain&apos;s Cut Active
+                  STATUS: AWAITING CONFIGURATION
                 </div>
               </div>
 
-              {/* Squad Header Card */}
-              <div className="p-6 bg-[#181818] border border-[#272727] rounded-sm flex flex-col md:flex-row md:items-center justify-between gap-6">
-                <div className="space-y-1">
-                  <span className="text-[10px] font-mono text-[#B69A67] uppercase">Designated Commander</span>
-                  <div className="text-base font-display font-bold text-[#F4F0E8]">
-                    Captain_M295 (DeadLock Member #295)
-                  </div>
-                  <p className="text-xs text-[#77736B]">
-                    Assigned cohort of 6 Rookies on Robinhood Chain track.
-                  </p>
+              <div className="p-8 bg-[#181818] border border-[rgba(230,223,209,0.14)] space-y-4">
+                <div className="flex items-center justify-between border-b border-[rgba(230,223,209,0.14)] pb-4">
+                  <span className="text-xs uppercase tracking-[0.22em] text-[#B69A67]">
+                    4-TIER PATRONAGE REGISTRY
+                  </span>
+                  <span className="text-xs uppercase tracking-[0.2em] text-[#A39E92]">
+                    AWAITING CONFIGURATION
+                  </span>
                 </div>
-
-                <div className="flex items-center gap-6 font-mono text-xs">
+                <p className="text-sm text-[#E6DFD1] leading-relaxed">
+                  Under the 4-Tier Patronage Protocol, 469 Members act as Sworn Squad Captains, each supervising ~5–6 Rookies (152 squads of 5 and 317 squads of 6 = 2,662 Rookies). Live wallet-to-squad assignments are awaiting smart contract deployment.
+                </p>
+                <dl className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-[rgba(230,223,209,0.14)] text-xs font-mono">
                   <div>
-                    <span className="text-[#77736B] block">ACCRUED CUT</span>
-                    <span className="text-[#B69A67] font-bold text-base">Awaiting On-Chain Data</span>
+                    <dt className="text-[#A39E92] uppercase">ASSIGNED CAPTAIN</dt>
+                    <dd className="text-[#F4F0E8] mt-1">—</dd>
                   </div>
                   <div>
-                    <span className="text-[#77736B] block">SQUAD SIZE</span>
-                    <span className="text-[#F4F0E8] font-bold text-base">6 Rookies</span>
+                    <dt className="text-[#A39E92] uppercase">ASSIGNED ROOKIES</dt>
+                    <dd className="text-[#F4F0E8] mt-1">—</dd>
                   </div>
-                </div>
-              </div>
-
-              {/* 6 Assigned Squad Members */}
-              <div className="space-y-3">
-                <h3 className="text-xs font-mono uppercase tracking-wider text-[#B69A67]">
-                  Assigned Rookies
-                </h3>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {[
-                    { id: 1204, handle: 'Vanguard_Analyst', status: 'Active Research', score: 94 },
-                    { id: 1205, handle: 'DevProtector', status: 'Multisig Watcher Staged', score: 88 },
-                    { id: 1206, handle: 'AlphaRookie_06', status: 'Bootcamp Week 4', score: 76 },
-                    { id: 1410, handle: 'MarketScout_2', status: 'Weekly Briefing', score: 82 },
-                    { id: 1891, handle: 'EquityProtector', status: 'Ascension Ready', score: 98 },
-                    { id: 2201, handle: 'RH_Specialist', status: 'Liquidity Review', score: 79 }
-                  ].map((m) => (
-                    <div key={m.id} className="p-4 bg-[#181818] border border-[#272727] rounded-sm space-y-2">
-                      <div className="flex justify-between items-center text-xs font-mono">
-                        <span className="text-[#F4F0E8] font-bold">Rookie #{m.id}</span>
-                        <span className="text-[#B69A67] text-[10px]">Score {m.score}/100</span>
-                      </div>
-                      <p className="text-xs text-[#E6DFD1] font-medium">{m.handle}</p>
-                      <div className="pt-2 border-t border-[#222] flex justify-between text-[11px] text-[#77736B]">
-                        <span>Status: {m.status}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                  <div>
+                    <dt className="text-[#A39E92] uppercase">ACCRUED CAPTAIN&apos;S CUT (1%)</dt>
+                    <dd className="text-[#F4F0E8] mt-1">—</dd>
+                  </div>
+                </dl>
               </div>
             </div>
           )}
@@ -559,24 +533,24 @@ export const MemberPortal: React.FC = () => {
           {/* ========================================================================= */}
           {activeTab === 'merit' && (
             <div className="space-y-8 animate-in fade-in duration-200">
-              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-[#242424]">
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-[rgba(230,223,209,0.14)]">
                 <div>
                   <span className="text-xs font-mono uppercase tracking-widest text-[#B69A67]">
                     VALUE CREATION ENGINE
                   </span>
-                  <h1 className="text-2xl sm:text-3xl font-display font-bold text-[#F4F0E8]">
+                  <h1 className="text-2xl sm:text-3xl font-display font-light text-[#F4F0E8]">
                     THE MERIT EXCHANGE
                   </h1>
                 </div>
-                <div className="text-xs font-mono text-[#77736B]">
-                  Weekly Fractional Stock Rewards & Grants
+                <div className="text-xs font-mono text-[#A39E92]">
+                  STATUS: AWAITING CONFIGURATION
                 </div>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                <div className="lg:col-span-5 bg-[#181818] border border-[#272727] rounded-sm p-6 space-y-4">
-                  <h3 className="text-sm font-display font-bold text-[#F4F0E8]">
-                    Submit Proof of Merit
+                <div className="lg:col-span-5 bg-[#181818] border border-[rgba(230,223,209,0.14)] p-6 space-y-4">
+                  <h3 className="text-sm font-display text-[#F4F0E8]">
+                    Submit Proof of Merit (Local Preview)
                   </h3>
 
                   <form
@@ -587,7 +561,7 @@ export const MemberPortal: React.FC = () => {
                         category: newMeritCategory,
                         title: newMeritTitle,
                         summary: newMeritSummary,
-                        author: `${selectedPersona.label} (${selectedPersona.address})`,
+                        author: selectedPersona.label,
                         authorTier: selectedPersona.tier
                       });
                       setNewMeritTitle('');
@@ -596,13 +570,13 @@ export const MemberPortal: React.FC = () => {
                     className="space-y-3"
                   >
                     <div>
-                      <label className="block text-[10px] font-mono text-[#77736B] uppercase mb-1">
+                      <label className="block text-[10px] font-mono text-[#A39E92] uppercase mb-1">
                         Category
                       </label>
                       <select
                         value={newMeritCategory}
                         onChange={(e) => setNewMeritCategory(e.target.value as any)}
-                        className="w-full bg-[#141414] border border-[#262626] px-3 py-2 text-xs text-[#E6DFD1] rounded-sm"
+                        className="w-full bg-[#141414] border border-[rgba(230,223,209,0.14)] px-3 py-2 text-xs text-[#E6DFD1]"
                       >
                         <option value="MARKET_ANALYSIS">Market Analysis</option>
                         <option value="RESEARCH">Chain Research</option>
@@ -612,7 +586,7 @@ export const MemberPortal: React.FC = () => {
                     </div>
 
                     <div>
-                      <label className="block text-[10px] font-mono text-[#77736B] uppercase mb-1">
+                      <label className="block text-[10px] font-mono text-[#A39E92] uppercase mb-1">
                         Title
                       </label>
                       <input
@@ -621,13 +595,12 @@ export const MemberPortal: React.FC = () => {
                         value={newMeritTitle}
                         onChange={(e) => setNewMeritTitle(e.target.value)}
                         placeholder="Deliverable title"
-                        className="w-full bg-[#141414] border border-[#262626] px-3 py-2 text-xs text-[#E6DFD1] rounded-sm"
-                      >
-                      </input>
+                        className="w-full bg-[#141414] border border-[rgba(230,223,209,0.14)] px-3 py-2 text-xs text-[#E6DFD1]"
+                      />
                     </div>
 
                     <div>
-                      <label className="block text-[10px] font-mono text-[#77736B] uppercase mb-1">
+                      <label className="block text-[10px] font-mono text-[#A39E92] uppercase mb-1">
                         Summary
                       </label>
                       <textarea
@@ -636,38 +609,49 @@ export const MemberPortal: React.FC = () => {
                         value={newMeritSummary}
                         onChange={(e) => setNewMeritSummary(e.target.value)}
                         placeholder="Value created for the Cartel..."
-                        className="w-full bg-[#141414] border border-[#262626] px-3 py-2 text-xs text-[#E6DFD1] rounded-sm resize-none"
+                        className="w-full bg-[#141414] border border-[rgba(230,223,209,0.14)] px-3 py-2 text-xs text-[#E6DFD1] resize-none"
                       />
                     </div>
 
                     <button
                       type="submit"
-                      className="w-full py-2 text-xs font-semibold uppercase tracking-wider text-[#171717] bg-[#B69A67] hover:bg-[#c5a975] rounded-sm cursor-pointer"
+                      className="w-full py-2.5 text-xs font-medium uppercase tracking-wider text-[#171717] bg-[#B69A67] hover:bg-[#8D7954] cursor-pointer"
                     >
-                      File Merit Submission
+                      Stage Merit Submission
                     </button>
                   </form>
                 </div>
 
                 <div className="lg:col-span-7 space-y-3">
-                  <h3 className="text-sm font-display font-bold text-[#F4F0E8]">
+                  <h3 className="text-sm font-display text-[#F4F0E8]">
                     Submission History
                   </h3>
                   <div className="space-y-3">
-                    {contributions.map((c) => (
-                      <div key={c.id} className="p-4 bg-[#181818] border border-[#272727] rounded-sm space-y-2">
-                        <div className="flex justify-between text-xs font-mono">
-                          <span className="text-[#B69A67]">{c.id} · {c.category}</span>
-                          <span className="text-[10px] text-[#77736B]">{c.date}</span>
-                        </div>
-                        <h4 className="text-xs font-bold text-[#F4F0E8]">{c.title}</h4>
-                        <p className="text-[11px] text-[#77736B] leading-relaxed">{c.summary}</p>
-                        <div className="pt-2 border-t border-[#222] flex justify-between text-[10px] font-mono">
-                          <span className="text-[#77736B]">Reward Status: {c.rewardStatus}</span>
-                          <span className="text-[#8D7954]">{c.status}</span>
-                        </div>
+                    {contributions.length === 0 ? (
+                      <div className="p-8 bg-[#181818] border border-[rgba(230,223,209,0.14)] space-y-2">
+                        <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#B69A67] block">
+                          AWAITING CONFIGURATION
+                        </span>
+                        <p className="text-xs text-[#A39E92]">
+                          No verified on-chain submissions recorded yet.
+                        </p>
                       </div>
-                    ))}
+                    ) : (
+                      contributions.map((c) => (
+                        <div key={c.id} className="p-4 bg-[#181818] border border-[rgba(230,223,209,0.14)] space-y-2">
+                          <div className="flex justify-between text-xs font-mono">
+                            <span className="text-[#B69A67]">{c.id} · {c.category}</span>
+                            <span className="text-[10px] text-[#A39E92]">{c.date}</span>
+                          </div>
+                          <h4 className="text-xs font-bold text-[#F4F0E8]">{c.title}</h4>
+                          <p className="text-[11px] text-[#A39E92] leading-relaxed">{c.summary}</p>
+                          <div className="pt-2 border-t border-[rgba(230,223,209,0.14)] flex justify-between text-[10px] font-mono">
+                            <span className="text-[#A39E92]">Reward Status: {c.rewardStatus}</span>
+                            <span className="text-[#8D7954]">{c.status}</span>
+                          </div>
+                        </div>
+                      ))
+                    )}
                   </div>
                 </div>
               </div>
@@ -697,7 +681,7 @@ export const MemberPortal: React.FC = () => {
               <div className="p-6 bg-[#181818] border border-[#272727] rounded-sm space-y-4">
                 <div className="flex items-center justify-between text-xs font-mono">
                   <span className="text-[#B69A67] font-bold">REVEAL VAULT STATUS</span>
-                  <span className="text-[#77736B]">Delayed Reveal Mechanism</span>
+                  <span className="text-[#A39E92]">Delayed Reveal Mechanism</span>
                 </div>
 
                 <div className="p-4 bg-[#141414] border border-[#242424] rounded-sm space-y-2">
@@ -708,7 +692,7 @@ export const MemberPortal: React.FC = () => {
                       ? '100% Mint Rebate Eligible'
                       : 'Standard Reveal Tier'}
                   </span>
-                  <p className="text-xs text-[#77736B]">
+                  <p className="text-xs text-[#A39E92]">
                     {selectedPersona.tier === 'kingpin'
                       ? 'Your Kingpin asset is designated for instant high-multiplier settlement in ETH or tokenized stocks upon contract activation.'
                       : selectedPersona.tier === 'godmother'
@@ -730,7 +714,7 @@ export const MemberPortal: React.FC = () => {
                   <span className="text-xs font-mono text-[#B69A67] block">
                     AWAITING ON-CHAIN DATA
                   </span>
-                  <p className="text-xs text-[#77736B] max-w-md mx-auto">
+                  <p className="text-xs text-[#A39E92] max-w-md mx-auto">
                     Live balance queries and transaction feeds will populate automatically once the Safe contract address on Robinhood Chain is deployed and linked.
                   </p>
                 </div>

@@ -21,7 +21,7 @@ export const NFTDetailModal: React.FC = () => {
       <div className="relative w-full max-w-2xl bg-[#1a1a1a] border border-[#2d2d2d] rounded-sm overflow-hidden shadow-2xl text-[#E6DFD1]">
         <button
           onClick={() => setSelectedNftDetail(null)}
-          className="absolute top-4 right-4 z-10 text-[#77736B] hover:text-[#F4F0E8] transition-colors p-1 cursor-pointer bg-[#141414]/60 rounded-full"
+          className="absolute top-4 right-4 z-10 text-[#A39E92] hover:text-[#F4F0E8] transition-colors p-1 cursor-pointer bg-[#141414]/60 rounded-full"
           aria-label="Close NFT view"
         >
           <X size={20} />
@@ -48,37 +48,37 @@ export const NFTDetailModal: React.FC = () => {
                 {selectedNftDetail.name}
               </h2>
 
-              <p className="text-xs text-[#77736B] leading-relaxed">
+              <p className="text-xs text-[#A39E92] leading-relaxed">
                 {tier.description}
               </p>
 
               {/* Trait Matrix */}
               <div className="pt-2">
-                <span className="text-[11px] font-mono uppercase tracking-wider text-[#77736B] block mb-2">
+                <span className="text-[11px] font-mono uppercase tracking-wider text-[#A39E92] block mb-2">
                   Character Attributes & Signatures
                 </span>
                 <div className="grid grid-cols-2 gap-2 text-xs">
                   {selectedNftDetail.traits.suit && (
                     <div className="p-2.5 bg-[#141414] border border-[#242424] rounded-sm">
-                      <span className="text-[10px] text-[#77736B] block uppercase">Tailoring</span>
+                      <span className="text-[10px] text-[#A39E92] block uppercase">Tailoring</span>
                       <span className="text-[#E6DFD1] font-medium text-[11px]">{selectedNftDetail.traits.suit}</span>
                     </div>
                   )}
                   {selectedNftDetail.traits.coat && (
                     <div className="p-2.5 bg-[#141414] border border-[#242424] rounded-sm">
-                      <span className="text-[10px] text-[#77736B] block uppercase">Overcoat</span>
+                      <span className="text-[10px] text-[#A39E92] block uppercase">Overcoat</span>
                       <span className="text-[#E6DFD1] font-medium text-[11px]">{selectedNftDetail.traits.coat}</span>
                     </div>
                   )}
                   {selectedNftDetail.traits.jewelry && (
                     <div className="p-2.5 bg-[#141414] border border-[#242424] rounded-sm">
-                      <span className="text-[10px] text-[#77736B] block uppercase">Insignia Jewelry</span>
+                      <span className="text-[10px] text-[#A39E92] block uppercase">Insignia Jewelry</span>
                       <span className="text-[#E6DFD1] font-medium text-[11px]">{selectedNftDetail.traits.jewelry}</span>
                     </div>
                   )}
                   {selectedNftDetail.traits.accessory && (
                     <div className="p-2.5 bg-[#141414] border border-[#242424] rounded-sm">
-                      <span className="text-[10px] text-[#77736B] block uppercase">Artifact</span>
+                      <span className="text-[10px] text-[#A39E92] block uppercase">Artifact</span>
                       <span className="text-[#E6DFD1] font-medium text-[11px]">{selectedNftDetail.traits.accessory}</span>
                     </div>
                   )}
@@ -88,16 +88,16 @@ export const NFTDetailModal: React.FC = () => {
               {/* Governance & Staking Power */}
               <div className="p-3 bg-[#141414] border border-[#282828] rounded-sm space-y-1">
                 <div className="flex justify-between items-center text-xs">
-                  <span className="text-[#77736B]">Voting Weight</span>
+                  <span className="text-[#A39E92]">Voting Weight</span>
                   <span className="font-mono font-bold text-[#B69A67]">{tier.votingPower}x Multiplier</span>
                 </div>
                 <div className="flex justify-between items-center text-xs">
-                  <span className="text-[#77736B]">Collection Share</span>
+                  <span className="text-[#A39E92]">Collection Share</span>
                   <span className="font-mono text-[#E6DFD1]">{tier.supplyPercentage}% ({tier.supply} Total)</span>
                 </div>
                 {tier.revealReward && (
                   <div className="flex justify-between items-center text-xs pt-1 border-t border-[#202020]">
-                    <span className="text-[#77736B]">Reveal Bounty</span>
+                    <span className="text-[#A39E92]">Reveal Bounty</span>
                     <span className="text-[11px] text-[#B69A67] font-medium">{tier.revealReward}</span>
                   </div>
                 )}

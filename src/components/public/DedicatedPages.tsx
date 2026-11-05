@@ -154,7 +154,7 @@ export const DedicatedPages: React.FC = () => {
               <div className="p-6 bg-[#1a1a1a] border-l-2 border-[#B69A67] text-[#F4F0E8] font-display text-lg italic">
                 &ldquo;WE ARE HONORABLE AND PEACEFUL, BUT NEVER DEFENSELESS.&rdquo;
               </div>
-              <p className="text-sm font-sans text-[#77736B]">
+              <p className="text-sm font-sans text-[#A39E92]">
                 The visual identity of DeadLock Cartel rejects cheap cartoon clichés or violent stereotypes. We embody the poise of private merchant bankers and sovereign guilds operating on Robinhood Chain.
               </p>
             </section>
@@ -170,7 +170,7 @@ export const DedicatedPages: React.FC = () => {
           <div className="md:col-span-4 space-y-6">
             <div className="p-6 bg-[#181818] border border-[#272727] rounded-sm space-y-4">
               <h3 className="text-xs font-mono uppercase tracking-widest text-[#B69A67]">Pillars of the Creed</h3>
-              <ul className="space-y-3 text-xs text-[#77736B]">
+              <ul className="space-y-3 text-xs text-[#A39E92]">
                 <li className="pb-3 border-b border-[#222222]">
                   <strong className="text-[#F4F0E8] block mb-1">01. Collective Treasury</strong>
                   50% secondary royalties funneled permanently into tokenized public equities.
@@ -215,7 +215,7 @@ export const DedicatedPages: React.FC = () => {
           <h1 className="text-4xl sm:text-6xl font-display font-bold text-[#F4F0E8] leading-tight">
             THE CHAIN OF COMMAND
           </h1>
-          <p className="text-sm sm:text-base text-[#77736B] max-w-2xl">
+          <p className="text-sm sm:text-base text-[#A39E92] max-w-2xl">
             A mathematically defined social structure combining strategic capital leadership, endowment stewardship, operational squad captains, and the developing street vanguard.
           </p>
         </div>
@@ -264,10 +264,10 @@ export const DedicatedPages: React.FC = () => {
 
                   {/* Art Direction Specs */}
                   <div className="space-y-2">
-                    <span className="text-[11px] font-mono uppercase tracking-wider text-[#77736B]">
+                    <span className="text-[11px] font-mono uppercase tracking-wider text-[#A39E92]">
                       Art Direction & Uniform Code
                     </span>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#77736B]">
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#A39E92]">
                       {tier.artDirection.map((art, idx) => (
                         <li key={idx} className="flex items-start gap-2">
                           <span className="text-[#B69A67]">•</span>
@@ -298,19 +298,19 @@ export const DedicatedPages: React.FC = () => {
           <h3 className="text-xl font-display font-bold text-[#F4F0E8]">
             The 469 Captains to 2,662 Rookies Ratio
           </h3>
-          <p className="text-xs text-[#77736B] max-w-2xl leading-relaxed">
+          <p className="text-xs text-[#A39E92] max-w-2xl leading-relaxed">
             Every Rookie in DeadLock Cartel belongs to an active, accountable squad. The mathematical distribution balances exactly without remainder:
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs">
             <div className="p-4 bg-[#191919] border border-[#262626] rounded-sm">
-              <span className="text-[11px] text-[#77736B] block">COHORT ALPHA (152 SQUADS)</span>
+              <span className="text-[11px] text-[#A39E92] block">COHORT ALPHA (152 SQUADS)</span>
               <span className="text-lg font-bold text-[#F4F0E8] block mt-1">152 × 5 = 760</span>
               <span className="text-[10px] text-[#B69A67]">Rookies supervised</span>
             </div>
 
             <div className="p-4 bg-[#191919] border border-[#262626] rounded-sm">
-              <span className="text-[11px] text-[#77736B] block">COHORT BETA (317 SQUADS)</span>
+              <span className="text-[11px] text-[#A39E92] block">COHORT BETA (317 SQUADS)</span>
               <span className="text-lg font-bold text-[#F4F0E8] block mt-1">317 × 6 = 1,902</span>
               <span className="text-[10px] text-[#B69A67]">Rookies supervised</span>
             </div>
@@ -341,7 +341,7 @@ export const DedicatedPages: React.FC = () => {
           <h1 className="text-4xl sm:text-6xl font-display font-bold text-[#F4F0E8] leading-tight">
             THE STOCK ENDOWMENT
           </h1>
-          <p className="text-sm sm:text-base text-[#77736B] max-w-2xl">
+          <p className="text-sm sm:text-base text-[#A39E92] max-w-2xl">
             A permanent shared treasury based on tokenized stocks and digital assets on the Robinhood Chain, funded by 50% of secondary market royalties and initial mint allocations.
           </p>
         </div>
@@ -349,27 +349,27 @@ export const DedicatedPages: React.FC = () => {
         {/* Treasury Metrics Overview with Honest Empty State */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div className="p-6 bg-[#181818] border border-[#272727] rounded-sm space-y-2">
-            <span className="text-[11px] font-mono text-[#77736B] uppercase">Total Value (USD)</span>
+            <span className="text-[11px] font-mono text-[#A39E92] uppercase">Total Value (USD)</span>
             <div className="text-xl font-mono font-bold text-[#E6DFD1]">Awaiting On-Chain Data</div>
             <span className="text-[10px] font-mono text-[#8D7954]">Safe Wallet Pre-activation</span>
           </div>
 
           <div className="p-6 bg-[#181818] border border-[#272727] rounded-sm space-y-2">
-            <span className="text-[11px] font-mono text-[#77736B] uppercase">Secondary Royalty Rate</span>
+            <span className="text-[11px] font-mono text-[#A39E92] uppercase">Secondary Royalty Rate</span>
             <div className="text-xl font-mono font-bold text-[#B69A67]">50.00%</div>
-            <span className="text-[10px] font-mono text-[#77736B]">Contract Enforced</span>
+            <span className="text-[10px] font-mono text-[#A39E92]">Contract Enforced</span>
           </div>
 
           <div className="p-6 bg-[#181818] border border-[#272727] rounded-sm space-y-2">
-            <span className="text-[11px] font-mono text-[#77736B] uppercase">Active Safe Signers</span>
+            <span className="text-[11px] font-mono text-[#A39E92] uppercase">Active Safe Signers</span>
             <div className="text-xl font-mono font-bold text-[#F4F0E8]">202 Leaders</div>
-            <span className="text-[10px] font-mono text-[#77736B]">33 Kingpins + 169 Godmothers</span>
+            <span className="text-[10px] font-mono text-[#A39E92]">33 Kingpins + 169 Godmothers</span>
           </div>
 
           <div className="p-6 bg-[#181818] border border-[#272727] rounded-sm space-y-2">
-            <span className="text-[11px] font-mono text-[#77736B] uppercase">Target Equities</span>
+            <span className="text-[11px] font-mono text-[#A39E92] uppercase">Target Equities</span>
             <div className="text-xl font-mono font-bold text-[#F4F0E8]">6 Core Assets</div>
-            <span className="text-[10px] font-mono text-[#77736B]">NVDA, TSLA, AAPL, HOOD, SPY, ETH</span>
+            <span className="text-[10px] font-mono text-[#A39E92]">NVDA, TSLA, AAPL, HOOD, SPY, ETH</span>
           </div>
         </div>
 
@@ -387,9 +387,9 @@ export const DedicatedPages: React.FC = () => {
                   <span className="text-base font-bold text-[#F4F0E8]">{asset.symbol}</span>
                   <span className="text-[10px] text-[#B69A67] uppercase">{asset.type.replace('_', ' ')}</span>
                 </div>
-                <p className="text-xs text-[#77736B]">{asset.name}</p>
+                <p className="text-xs text-[#A39E92]">{asset.name}</p>
                 <div className="pt-2 border-t border-[#222222] flex items-center justify-between text-[11px] font-mono">
-                  <span className="text-[#77736B]">Contract Status:</span>
+                  <span className="text-[#A39E92]">Contract Status:</span>
                   <span className="text-[#8D7954]">Awaiting Deployment</span>
                 </div>
               </div>
@@ -398,7 +398,7 @@ export const DedicatedPages: React.FC = () => {
         </div>
 
         {/* Regulatory & Safety Notice */}
-        <div className="p-6 bg-[#161616] border border-[#2b2b2b] rounded-sm space-y-3 text-xs text-[#77736B] leading-relaxed">
+        <div className="p-6 bg-[#161616] border border-[#2b2b2b] rounded-sm space-y-3 text-xs text-[#A39E92] leading-relaxed">
           <div className="flex items-center gap-2 text-[#B69A67] font-mono text-xs">
             <Lock size={14} />
             <span>COMPLIANCE AND FIDUCIARY SAFEGUARDS</span>
@@ -426,7 +426,7 @@ export const DedicatedPages: React.FC = () => {
           <h1 className="text-4xl sm:text-6xl font-display font-bold text-[#F4F0E8] leading-tight">
             THE REVEAL VAULT
           </h1>
-          <p className="text-sm sm:text-base text-[#77736B] max-w-2xl">
+          <p className="text-sm sm:text-base text-[#A39E92] max-w-2xl">
             202 special reward NFTs are embedded in the genesis 3,333 collection. Unveiled immediately upon the delayed reveal event on Robinhood Chain.
           </p>
         </div>
@@ -436,18 +436,18 @@ export const DedicatedPages: React.FC = () => {
           <div className="p-8 bg-[#181818] border border-[#B69A67]/40 rounded-sm space-y-6">
             <div className="flex items-center justify-between text-xs font-mono">
               <span className="text-[#B69A67] font-bold">33 SPECIAL NFTS</span>
-              <span className="text-[#77736B]">TIER 01</span>
+              <span className="text-[#A39E92]">TIER 01</span>
             </div>
             <h2 className="text-2xl font-display font-bold text-[#F4F0E8]">
               Kingpin High-Multiplier Bounty
             </h2>
-            <p className="text-xs text-[#77736B] leading-relaxed">
+            <p className="text-xs text-[#A39E92] leading-relaxed">
               Each of the 33 Kingpin NFTs is associated with a high-multiplier bounty, payable in ETH or Robinhood Chain tokenized equity shares upon official reveal verification.
             </p>
             <div className="p-4 bg-[#141414] border border-[#242424] rounded-sm space-y-1 text-xs">
-              <span className="text-[10px] font-mono text-[#77736B] uppercase">Status</span>
+              <span className="text-[10px] font-mono text-[#A39E92] uppercase">Status</span>
               <span className="font-mono text-[#B69A67] block">SEALED IN SMART CONTRACT VAULT</span>
-              <p className="text-[11px] text-[#77736B]">
+              <p className="text-[11px] text-[#A39E92]">
                 Amounts will be calculated and disclosed upon public contract deployment.
               </p>
             </div>
@@ -457,18 +457,18 @@ export const DedicatedPages: React.FC = () => {
           <div className="p-8 bg-[#181818] border border-[#8D7954]/40 rounded-sm space-y-6">
             <div className="flex items-center justify-between text-xs font-mono">
               <span className="text-[#8D7954] font-bold">169 SPECIAL NFTS</span>
-              <span className="text-[#77736B]">TIER 02</span>
+              <span className="text-[#A39E92]">TIER 02</span>
             </div>
             <h2 className="text-2xl font-display font-bold text-[#F4F0E8]">
               Godmother 100% Mint Rebate
             </h2>
-            <p className="text-xs text-[#77736B] leading-relaxed">
+            <p className="text-xs text-[#A39E92] leading-relaxed">
               Every Godmother NFT revealed triggers an automated 100% mint rebate, honoring the matriarchs who oversee community welfare and the tokenized-stock treasury portfolio.
             </p>
             <div className="p-4 bg-[#141414] border border-[#242424] rounded-sm space-y-1 text-xs">
-              <span className="text-[10px] font-mono text-[#77736B] uppercase">Status</span>
+              <span className="text-[10px] font-mono text-[#A39E92] uppercase">Status</span>
               <span className="font-mono text-[#8D7954] block">SEALED IN SMART CONTRACT VAULT</span>
-              <p className="text-[11px] text-[#77736B]">
+              <p className="text-[11px] text-[#A39E92]">
                 Rebate settlement mechanism and claim windows will be executed post-reveal.
               </p>
             </div>
@@ -495,7 +495,7 @@ export const DedicatedPages: React.FC = () => {
           <h1 className="text-4xl sm:text-6xl font-display font-bold text-[#F4F0E8] leading-tight">
             PATRONAGE & SQUAD STRUCTURE
           </h1>
-          <p className="text-sm sm:text-base text-[#77736B] max-w-2xl">
+          <p className="text-sm sm:text-base text-[#A39E92] max-w-2xl">
             A cohesive brotherhood where senior architects guide operational commanders, and squad captains directly mentor developing rookies with reciprocal financial alignment.
           </p>
         </div>
@@ -530,8 +530,8 @@ export const DedicatedPages: React.FC = () => {
             </div>
 
             {/* Level 3: Street Vanguard */}
-            <div className="p-4 bg-[#141414] border border-[#242424] rounded-sm space-y-2 ml-8 md:ml-16 border-l-2 border-l-[#77736B]">
-              <div className="flex items-center justify-between text-xs font-mono text-[#77736B]">
+            <div className="p-4 bg-[#141414] border border-[#242424] rounded-sm space-y-2 ml-8 md:ml-16 border-l-2 border-l-[#A39E92]">
+              <div className="flex items-center justify-between text-xs font-mono text-[#A39E92]">
                 <span>COMMUNITY LAYER</span>
                 <span>2,662 STREET VANGUARD (ROOKIES)</span>
               </div>
@@ -576,7 +576,7 @@ export const DedicatedPages: React.FC = () => {
           <h1 className="text-4xl sm:text-6xl font-display font-bold text-[#F4F0E8] leading-tight">
             THE MERIT EXCHANGE
           </h1>
-          <p className="text-sm sm:text-base text-[#77736B] max-w-2xl">
+          <p className="text-sm sm:text-base text-[#A39E92] max-w-2xl">
             Members who create measurable value—in-depth market research, squad mentorship, or technical tools—receive fractional tokenized-stock rewards and treasury grants.
           </p>
         </div>
@@ -590,7 +590,7 @@ export const DedicatedPages: React.FC = () => {
 
             <form onSubmit={handleMeritSubmit} className="space-y-4">
               <div>
-                <label className="block text-[11px] font-mono uppercase tracking-wider text-[#77736B] mb-1.5">
+                <label className="block text-[11px] font-mono uppercase tracking-wider text-[#A39E92] mb-1.5">
                   Contribution Category
                 </label>
                 <select
@@ -608,7 +608,7 @@ export const DedicatedPages: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-[11px] font-mono uppercase tracking-wider text-[#77736B] mb-1.5">
+                <label className="block text-[11px] font-mono uppercase tracking-wider text-[#A39E92] mb-1.5">
                   Dossier Title
                 </label>
                 <input
@@ -622,7 +622,7 @@ export const DedicatedPages: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-[11px] font-mono uppercase tracking-wider text-[#77736B] mb-1.5">
+                <label className="block text-[11px] font-mono uppercase tracking-wider text-[#A39E92] mb-1.5">
                   Deliverable Summary / Link
                 </label>
                 <textarea
@@ -651,32 +651,35 @@ export const DedicatedPages: React.FC = () => {
             </h2>
 
             <div className="space-y-3">
-              {contributions.map((c) => (
-                <div key={c.id} className="p-5 bg-[#181818] border border-[#272727] rounded-sm space-y-3">
-                  <div className="flex items-center justify-between text-xs font-mono">
-                    <span className="text-[#B69A67]">{c.category.replace('_', ' ')}</span>
-                    <span className="text-[10px] text-[#77736B]">{c.date}</span>
+              {contributions.length === 0 ? (
+                <div className="p-8 bg-[#202020]/50 border border-[rgba(230,223,209,0.14)] space-y-2">
+                  <div className="text-xs uppercase tracking-[0.22em] text-[#B69A67]">
+                    AWAITING CONFIGURATION
                   </div>
-
-                  <h3 className="text-sm font-display font-bold text-[#F4F0E8]">{c.title}</h3>
-                  <p className="text-xs text-[#77736B] leading-relaxed">{c.summary}</p>
-
-                  <div className="pt-3 border-t border-[#222222] flex items-center justify-between text-[11px] font-mono">
-                    <span className="text-[#77736B]">Author: {c.author}</span>
-                    <span
-                      className={`px-2 py-0.5 rounded-xs text-[10px] uppercase font-bold ${
-                        c.status === 'APPROVED'
-                          ? 'bg-[#18261e] text-[#48a972] border border-[#234230]'
-                          : c.status === 'EVALUATING'
-                          ? 'bg-[#262218] text-[#c5a975] border border-[#423923]'
-                          : 'bg-[#1e1e1e] text-[#77736B] border border-[#2d2d2d]'
-                      }`}
-                    >
-                      {c.status.replace('_', ' ')}
-                    </span>
-                  </div>
+                  <p className="text-xs text-[#A39E92] leading-relaxed">
+                    Merit Exchange smart contracts and dossier verification queues are not yet published on-chain.
+                  </p>
                 </div>
-              ))}
+              ) : (
+                contributions.map((c) => (
+                  <div key={c.id} className="p-5 bg-[#181818] border border-[rgba(230,223,209,0.14)] space-y-3">
+                    <div className="flex items-center justify-between text-xs font-mono">
+                      <span className="text-[#B69A67]">{c.category.replace('_', ' ')}</span>
+                      <span className="text-[10px] text-[#A39E92]">{c.date}</span>
+                    </div>
+
+                    <h3 className="text-sm font-display font-bold text-[#F4F0E8]">{c.title}</h3>
+                    <p className="text-xs text-[#A39E92] leading-relaxed">{c.summary}</p>
+
+                    <div className="pt-3 border-t border-[rgba(230,223,209,0.14)] flex items-center justify-between text-[11px] font-mono">
+                      <span className="text-[#A39E92]">Author: {c.author}</span>
+                      <span className="px-2 py-0.5 text-[10px] uppercase text-[#B69A67] border border-[rgba(230,223,209,0.14)]">
+                        {c.status.replace('_', ' ')}
+                      </span>
+                    </div>
+                  </div>
+                ))
+              )}
             </div>
           </div>
         </div>
@@ -699,7 +702,7 @@ export const DedicatedPages: React.FC = () => {
           <h1 className="text-4xl sm:text-6xl font-display font-bold text-[#F4F0E8] leading-tight">
             TRADING DESK & GOVERNANCE
           </h1>
-          <p className="text-sm sm:text-base text-[#77736B] max-w-2xl">
+          <p className="text-sm sm:text-base text-[#A39E92] max-w-2xl">
             Members direct the Stock Endowment through gasless Snapshot-style proposals. Voting power is strictly determined by rank: Kingpins (50x), Godmothers (15x), Members (5x), Rookies (1x).
           </p>
         </div>
@@ -716,69 +719,70 @@ export const DedicatedPages: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 gap-6">
-            {proposals.map((prop) => {
-              const totalVotes = prop.votesFor + prop.votesAgainst;
-              const forPercent = totalVotes > 0 ? Math.round((prop.votesFor / totalVotes) * 100) : 0;
-
-              return (
-                <div key={prop.id} className="p-6 bg-[#181818] border border-[#272727] rounded-sm space-y-4">
-                  <div className="flex flex-wrap items-center justify-between gap-4">
-                    <div className="flex items-center gap-3">
-                      <span className="text-xs font-mono text-[#B69A67]">{prop.id}</span>
-                      <span className="text-[10px] font-mono px-2 py-0.5 bg-[#141414] border border-[#292929] text-[#77736B] rounded-xs">
-                        {prop.actionType.replace('_', ' ')}
-                      </span>
-                    </div>
-                    <span className="text-xs font-mono text-[#77736B]">{prop.deadline}</span>
-                  </div>
-
-                  <h3 className="text-lg font-display font-bold text-[#F4F0E8]">{prop.title}</h3>
-                  <p className="text-xs text-[#77736B] max-w-3xl leading-relaxed">{prop.description}</p>
-
-                  {/* Voting Bar */}
-                  <div className="space-y-1.5 pt-2">
-                    <div className="flex justify-between text-xs font-mono">
-                      <span className="text-[#E6DFD1]">Votes For: {prop.votesFor.toLocaleString()} ({forPercent}%)</span>
-                      <span className="text-[#77736B]">Votes Against: {prop.votesAgainst.toLocaleString()}</span>
-                    </div>
-                    <div className="w-full h-2 bg-[#141414] rounded-full overflow-hidden flex">
-                      <div className="bg-[#B69A67] h-full transition-all duration-500" style={{ width: `${forPercent}%` }} />
-                      <div className="bg-[#562C32] h-full transition-all duration-500" style={{ width: `${100 - forPercent}%` }} />
-                    </div>
-                  </div>
-
-                  {/* Actions */}
-                  <div className="pt-4 border-t border-[#222222] flex flex-wrap items-center justify-between gap-4">
-                    <div className="text-xs text-[#77736B] font-mono">
-                      Execution Status: <span className="text-[#8D7954]">{prop.executionStatus.replace(/_/g, ' ')}</span>
-                    </div>
-
-                    <div className="flex items-center gap-3">
-                      {prop.userVoted ? (
-                        <span className="text-xs font-mono text-[#B69A67] bg-[#221f19] px-3 py-1.5 border border-[#3b3220] rounded-sm">
-                          Signature Cast: {prop.userVoted}
-                        </span>
-                      ) : (
-                        <>
-                          <button
-                            onClick={() => castVote(prop.id, 'FOR')}
-                            className="px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#171717] bg-[#B69A67] hover:bg-[#c5a975] rounded-sm transition-colors cursor-pointer"
-                          >
-                            Vote For
-                          </button>
-                          <button
-                            onClick={() => castVote(prop.id, 'AGAINST')}
-                            className="px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#E6DFD1] bg-[#222222] hover:bg-[#2b2b2b] border border-[#2e2e2e] rounded-sm transition-colors cursor-pointer"
-                          >
-                            Vote Against
-                          </button>
-                        </>
-                      )}
-                    </div>
-                  </div>
+            {proposals.length === 0 ? (
+              <div className="p-8 bg-[#202020]/50 border border-[rgba(230,223,209,0.14)] space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs uppercase tracking-[0.22em] text-[#B69A67]">
+                    AWAITING CONFIGURATION
+                  </span>
+                  <span className="text-xs tabular-nums text-[#A39E92]">—</span>
                 </div>
-              );
-            })}
+                <p className="text-sm text-[#E6DFD1] leading-relaxed">
+                  No live Snapshot proposals are currently published. Snapshot votes are off-chain signaling mechanisms and do not trigger automatic treasury execution.
+                </p>
+              </div>
+            ) : (
+              proposals.map((prop) => {
+                const totalVotes = prop.votesFor + prop.votesAgainst;
+                const forPercent = totalVotes > 0 ? Math.round((prop.votesFor / totalVotes) * 100) : 0;
+
+                return (
+                  <div key={prop.id} className="p-6 bg-[#181818] border border-[rgba(230,223,209,0.14)] space-y-4">
+                    <div className="flex flex-wrap items-center justify-between gap-4">
+                      <div className="flex items-center gap-3">
+                        <span className="text-xs font-mono text-[#B69A67]">{prop.id}</span>
+                        <span className="text-[10px] font-mono px-2 py-0.5 bg-[#141414] border border-[rgba(230,223,209,0.14)] text-[#A39E92]">
+                          {prop.actionType.replace('_', ' ')}
+                        </span>
+                      </div>
+                      <span className="text-xs font-mono text-[#A39E92]">{prop.deadline}</span>
+                    </div>
+
+                    <h3 className="text-lg font-display font-bold text-[#F4F0E8]">{prop.title}</h3>
+                    <p className="text-xs text-[#A39E92] max-w-3xl leading-relaxed">{prop.description}</p>
+
+                    <div className="pt-4 border-t border-[rgba(230,223,209,0.14)] flex flex-wrap items-center justify-between gap-4">
+                      <div className="text-xs text-[#A39E92] font-mono">
+                        Execution Status: <span className="text-[#8D7954]">{prop.executionStatus.replace(/_/g, ' ')} ({forPercent}%)</span>
+                      </div>
+
+                      <div className="flex items-center gap-3">
+                        {prop.userVoted ? (
+                          <span className="text-xs font-mono text-[#B69A67] px-3 py-1.5 border border-[rgba(230,223,209,0.14)]">
+                            Signature Cast: {prop.userVoted}
+                          </span>
+                        ) : (
+                          <>
+                            <button
+                              onClick={() => castVote(prop.id, 'FOR')}
+                              className="px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#171717] bg-[#B69A67] hover:bg-[#8D7954] transition-colors cursor-pointer"
+                            >
+                              Vote For
+                            </button>
+                            <button
+                              onClick={() => castVote(prop.id, 'AGAINST')}
+                              className="px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#E6DFD1] bg-[#202020] border border-[rgba(230,223,209,0.14)] transition-colors cursor-pointer"
+                            >
+                              Vote Against
+                            </button>
+                          </>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })
+            )}
           </div>
         </div>
       </div>
@@ -858,7 +862,7 @@ export const DedicatedPages: React.FC = () => {
               </span>
             </div>
 
-            <div className="flex items-center gap-6 text-[11px] font-mono text-[#77736B]">
+            <div className="flex items-center gap-6 text-[11px] font-mono text-[#A39E92]">
               <span>
                 FORMULA: <strong className="text-[#F4F0E8]">3 ROOKIES → 1 MEMBER</strong>
               </span>
@@ -909,7 +913,7 @@ export const DedicatedPages: React.FC = () => {
                           }}
                           className="group relative bg-[#181818] border border-[#2a2a2a] p-4 space-y-4"
                         >
-                          <div className="flex items-center justify-between text-[10px] font-mono text-[#77736B] uppercase tracking-[0.2em]">
+                          <div className="flex items-center justify-between text-[10px] font-mono text-[#A39E92] uppercase tracking-[0.2em]">
                             <span>INPUT 0{idx + 1}</span>
                             <span className="text-[#B69A67]">TIER 04 · ROOKIE</span>
                           </div>
@@ -928,7 +932,7 @@ export const DedicatedPages: React.FC = () => {
                               <span className="text-xs font-display font-bold text-[#F4F0E8] block">
                                 DeadLock Rookie #{id}
                               </span>
-                              <span className="text-[10px] font-mono text-[#77736B]">
+                              <span className="text-[10px] font-mono text-[#A39E92]">
                                 1x Governance Weight
                               </span>
                             </div>
@@ -981,15 +985,15 @@ export const DedicatedPages: React.FC = () => {
 
                     <div className="grid grid-cols-3 gap-3 pt-4 border-t border-[#262626] font-mono">
                       <div>
-                        <span className="text-[10px] text-[#77736B] uppercase block">Rookies Burned</span>
+                        <span className="text-[10px] text-[#A39E92] uppercase block">Rookies Burned</span>
                         <span className="text-sm font-bold text-[#F4F0E8]">3 Units</span>
                       </div>
                       <div>
-                        <span className="text-[10px] text-[#77736B] uppercase block">Voting Power</span>
+                        <span className="text-[10px] text-[#A39E92] uppercase block">Voting Power</span>
                         <span className="text-sm font-bold text-[#B69A67]">5x Weight</span>
                       </div>
                       <div>
-                        <span className="text-[10px] text-[#77736B] uppercase block">Supply Impact</span>
+                        <span className="text-[10px] text-[#A39E92] uppercase block">Supply Impact</span>
                         <span className="text-sm font-bold text-[#B69A67]">-2 NFTs</span>
                       </div>
                     </div>
@@ -1001,7 +1005,7 @@ export const DedicatedPages: React.FC = () => {
 
           {/* Action Bar & Mechanism Controls */}
           <div className="relative z-10 mt-12 pt-8 border-t border-[#222222] flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div className="flex flex-wrap items-center gap-6 text-xs font-mono text-[#77736B]">
+            <div className="flex flex-wrap items-center gap-6 text-xs font-mono text-[#A39E92]">
               <span>
                 SIMULATED SUPPLY: <strong className="text-[#F4F0E8]">{currentSupply.toLocaleString()}</strong> / 3,333
               </span>
@@ -1069,7 +1073,7 @@ export const DedicatedPages: React.FC = () => {
             </h1>
           </div>
           <div className="lg:col-span-4">
-            <p className="text-sm text-[#77736B] leading-relaxed">
+            <p className="text-sm text-[#A39E92] leading-relaxed">
               Four unified ranks within one economic brotherhood. Official contract metadata and trait provenance synchronize upon delayed reveal execution on Robinhood Chain.
             </p>
           </div>
@@ -1102,7 +1106,7 @@ export const DedicatedPages: React.FC = () => {
           </div>
 
           <div className="relative min-w-[240px]">
-            <Search size={14} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#77736B]" />
+            <Search size={14} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#A39E92]" />
             <input
               type="text"
               value={archiveSearchQuery}
@@ -1125,14 +1129,14 @@ export const DedicatedPages: React.FC = () => {
                 <ArtworkVisual type={nft.tier} aspect="3:4" title={nft.name} minimal />
               </div>
               <div className="space-y-1.5 pt-2 border-t border-[#222222]">
-                <div className="flex items-center justify-between text-[10px] font-mono tracking-[0.2em] text-[#77736B]">
+                <div className="flex items-center justify-between text-[10px] font-mono tracking-[0.2em] text-[#A39E92]">
                   <span className="uppercase text-[#B69A67]">{nft.tier}</span>
                   <span>#{String(nft.tokenId).padStart(4, '0')}</span>
                 </div>
                 <h3 className="text-sm font-display font-bold text-[#F4F0E8] truncate group-hover:text-[#B69A67] transition-colors">
                   {nft.name}
                 </h3>
-                <p className="text-[11px] text-[#77736B] truncate">{nft.traits.suit}</p>
+                <p className="text-[11px] text-[#A39E92] truncate">{nft.traits.suit}</p>
               </div>
             </div>
           ))}
@@ -1156,7 +1160,7 @@ export const DedicatedPages: React.FC = () => {
           <h1 className="text-4xl sm:text-6xl font-display font-bold text-[#F4F0E8] leading-tight">
             JOIN THE BROTHERHOOD
           </h1>
-          <p className="text-sm sm:text-base text-[#77736B] max-w-2xl">
+          <p className="text-sm sm:text-base text-[#A39E92] max-w-2xl">
             We are not an anonymous speculative chat room. We are an organized economic vanguard on the Robinhood Chain.
           </p>
         </div>
@@ -1166,7 +1170,7 @@ export const DedicatedPages: React.FC = () => {
             <h2 className="text-2xl font-display font-bold text-[#F4F0E8]">
               Apply For GTD Whitelist
             </h2>
-            <p className="text-xs text-[#77736B] leading-relaxed">
+            <p className="text-xs text-[#A39E92] leading-relaxed">
               Submit your dossier to prove your merit as an independent market participant, researcher, developer, or squad leader.
             </p>
             <button
@@ -1209,43 +1213,74 @@ export const DedicatedPages: React.FC = () => {
     );
   }
 
-  // Fallback for /utilities general overview
-  return (
-    <div className="py-28 px-6 md:px-12 max-w-[1440px] mx-auto space-y-12">
-      <div className="space-y-4">
-        <div className="flex items-center gap-2 text-xs font-mono text-[#B69A67]">
-          <span>UTILITY HUB</span>
-          <span>·</span>
-          <span>THE SIX CONNECTED PROTOCOLS</span>
-        </div>
-        <h1 className="text-4xl sm:text-6xl font-display font-bold text-[#F4F0E8] leading-tight">
-          THE SIX UTILITY PILLARS
-        </h1>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {[
-          { title: 'The Stock Endowment', route: '/utilities/stock-endowment', desc: 'Permanent treasury investing in NVDA, TSLA, AAPL, HOOD, SPY, ETH.' },
-          { title: 'Instant Reveal Bounties', route: '/utilities/bounties', desc: '202 sealed reward NFTs: 33 Kingpin bounties, 169 Godmother rebates.' },
-          { title: 'The 4-Tier Patronage Protocol', route: '/utilities/patronage', desc: '469 squad captains guiding 2,662 rookies with 1% Captain cut.' },
-          { title: 'Proof-of-Merit & Grants', route: '/utilities/merit', desc: 'Weekly fractional rewards for analysis, research, and tooling.' },
-          { title: 'The On-Site Trading Desk', route: '/utilities/trading-desk', desc: 'Gasless Snapshot proposals with 50x/15x/5x/1x tier weights.' },
-          { title: 'The 3-for-1 Ascension Burn', route: '/utilities/ascension', desc: 'Burn 3 Rookies for 1 Member, reducing collection supply by 2.' }
-        ].map((item, idx) => (
-          <div
-            key={idx}
-            onClick={() => setRoute(item.route as AppRoute)}
-            className="p-6 bg-[#181818] border border-[#272727] hover:border-[#B69A67] rounded-sm transition-all cursor-pointer space-y-3"
-          >
-            <span className="text-xs font-mono text-[#B69A67]">0{idx + 1}</span>
-            <h3 className="text-lg font-display font-bold text-[#F4F0E8]">{item.title}</h3>
-            <p className="text-xs text-[#77736B] leading-relaxed">{item.desc}</p>
-            <span className="text-xs font-mono text-[#E6DFD1] flex items-center gap-1 pt-2">
-              <span>View Deep Dive</span>
-              <ArrowRight size={12} />
-            </span>
+  // 11. /utilities general overview
+  if (route === '/utilities') {
+    return (
+      <div className="py-28 px-6 md:px-12 max-w-[1440px] mx-auto space-y-12">
+        <div className="space-y-4">
+          <div className="flex items-center gap-2 text-xs font-mono text-[#B69A67]">
+            <span>UTILITY HUB</span>
+            <span>·</span>
+            <span>THE SIX CONNECTED PROTOCOLS</span>
           </div>
-        ))}
+          <h1 className="text-4xl sm:text-6xl font-display font-light text-[#F4F0E8] leading-tight">
+            THE SIX UTILITY PILLARS
+          </h1>
+        </div>
+
+        <div className="border-t border-[rgba(230,223,209,0.14)]">
+          {[
+            { title: 'Deadlock Stock Endowment', route: '/utilities/stock-endowment', desc: 'Shared treasury policy allocating 50% of secondary royalties to tokenized equities and ETH.' },
+            { title: 'Instant Reveal Bounties', route: '/utilities/bounties', desc: '33 Kingpin bounties + 169 Godmother 100% mint rebates per brief.' },
+            { title: '4-Tier Patronage Protocol', route: '/utilities/patronage', desc: '469 Sworn Squad Captains each supervise ~5–6 Rookies with a 1% Captain’s Cut.' },
+            { title: 'Proof-of-Merit & Cartel Grants', route: '/utilities/merit', desc: 'Merit-based grants for analysis, research, and tooling.' },
+            { title: 'On-Site Trading Desk', route: '/utilities/trading-desk', desc: 'Weighted governance proposals (50x/15x/5x/1x). Snapshot votes are not automatic execution.' },
+            { title: '3-for-1 Ascension Burn', route: '/utilities/ascension', desc: 'Burn 3 Rookies for 1 Member; each ascension reduces collection supply by two.' }
+          ].map((item, idx) => (
+            <button
+              key={idx}
+              type="button"
+              onClick={() => setRoute(item.route as AppRoute)}
+              className="w-full text-left py-7 border-b border-[rgba(230,223,209,0.14)] hover:border-[#B69A67] transition-colors cursor-pointer flex items-baseline justify-between gap-6"
+            >
+              <div className="flex items-baseline gap-6">
+                <span className="text-xs font-mono text-[#A39E92]">0{idx + 1}</span>
+                <div className="space-y-1">
+                  <h3 className="text-2xl font-display font-light text-[#F4F0E8]">{item.title}</h3>
+                  <p className="text-sm text-[#A39E92] leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+              <span className="text-xs font-mono text-[#B69A67] flex items-center gap-1 shrink-0">
+                <span>INSPECT</span>
+                <ArrowRight size={12} />
+              </span>
+            </button>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // Fallback for any unbuilt route: explicit "NOT PUBLISHED YET" state
+  return (
+    <div className="py-36 px-6 md:px-14 max-w-[960px] mx-auto space-y-8">
+      <div className="inline-block px-3 py-1 border border-[rgba(230,223,209,0.14)] text-[11px] uppercase tracking-[0.24em] text-[#B69A67]">
+        NOT PUBLISHED YET · AWAITING CONFIGURATION
+      </div>
+      <h1 className="font-display font-light text-4xl sm:text-6xl text-[#F4F0E8]">
+        SECTION NOT PUBLISHED YET.
+      </h1>
+      <p className="text-sm sm:text-base text-[#A39E92] max-w-xl leading-relaxed">
+        This route is awaiting official configuration and publication. No unverified data or placeholder endpoints are active at this path.
+      </p>
+      <div className="pt-4">
+        <button
+          type="button"
+          onClick={() => setRoute('/')}
+          className="px-7 py-3.5 text-[11px] uppercase tracking-[0.24em] text-[#171717] bg-[#B69A67] hover:bg-[#8D7954] transition-colors cursor-pointer"
+        >
+          RETURN TO HOMEPAGE
+        </button>
       </div>
     </div>
   );

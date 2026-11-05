@@ -10,73 +10,120 @@ export const ManifestoSection: React.FC = () => {
   return (
     <section
       id="manifesto"
-      className="py-32 md:py-48 px-6 md:px-14 max-w-[1440px] mx-auto border-t border-[#202020]"
+      aria-label="Manifesto — Brand Identity"
+      className="relative py-28 sm:py-36 lg:py-48 px-5 sm:px-8 lg:px-14 border-t border-[rgba(230,223,209,0.14)] overflow-hidden"
     >
-      {/* Chapter Metadata */}
-      <div className="flex items-center justify-between text-[11px] font-mono uppercase tracking-[0.28em] text-[#77736B] mb-16">
-        <span>01 / THE MANIFESTO</span>
-        <span className="hidden sm:inline text-[#8D7954]">COLLECTIVE SOVEREIGNTY</span>
+      {/* Background: Faint Concentric Hairline Rings */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden"
+      >
+        <svg
+          viewBox="0 0 1000 1000"
+          className="w-[720px] h-[720px] sm:w-[960px] sm:h-[960px] lg:w-[1160px] lg:h-[1160px] opacity-100"
+        >
+          <circle
+            cx="500"
+            cy="500"
+            r="99.5"
+            fill="none"
+            stroke="rgba(230, 223, 209, 0.08)"
+            strokeWidth="1"
+          />
+          <circle
+            cx="500"
+            cy="500"
+            r="246.2"
+            fill="none"
+            stroke="rgba(230, 223, 209, 0.08)"
+            strokeWidth="1"
+          />
+          <circle
+            cx="500"
+            cy="500"
+            r="448.7"
+            fill="none"
+            stroke="rgba(230, 223, 209, 0.08)"
+            strokeWidth="1"
+          />
+          <circle
+            cx="500"
+            cy="500"
+            r="495"
+            fill="none"
+            stroke="rgba(230, 223, 209, 0.06)"
+            strokeWidth="1"
+          />
+        </svg>
       </div>
 
-      {/* Asymmetrical Editorial Layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-16 items-center">
-        {/* Left: Large Cinematic Alliance Composition (Cols 1-7) */}
-        <motion.div
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.95, ease: easeEditorial }}
-          className="lg:col-span-7 relative overflow-hidden bg-[#141414]"
-        >
-          <div className="aspect-[16/10] overflow-hidden">
-            <motion.img
-              initial={shouldReduceMotion ? false : { scale: 1.08 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: true, amount: 0.25 }}
-              transition={{ duration: 1.35, ease: easeEditorial }}
-              src="/src/assets/images/manifesto_alliance_portrait_1793866256902.jpg"
-              alt="Four members of the DeadLock Cartel standing in quiet unity in bespoke dark wool coats"
-              referrerPolicy="no-referrer"
-              className="w-full h-full object-cover object-center"
-            />
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#171717]/70 via-transparent to-transparent pointer-events-none" />
-          <div className="pt-3 flex items-center justify-between text-[10px] font-mono tracking-[0.22em] text-[#77736B] uppercase">
-            <span>FIG. 02 — THE ALLIANCE</span>
-            <span>DIGNITY · DISCIPLINE · DETERRENCE</span>
-          </div>
-        </motion.div>
+      <div className="relative z-10 max-w-[1440px] mx-auto">
+        {/* Chapter Metadata */}
+        <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.28em] text-[#A39E92] mb-16 sm:mb-24">
+          <span>01 / THE MANIFESTO</span>
+          <span className="hidden sm:inline">ECONOMIC BROTHERHOOD</span>
+        </div>
 
-        {/* Right: Concise Editorial Statement & Discreet Link (Cols 8-12) */}
-        <motion.div
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.85, ease: easeEditorial, delay: 0.12 }}
-          className="lg:col-span-5 space-y-8 lg:pl-4"
-        >
-          <h2 className="font-display font-bold text-3xl sm:text-5xl text-[#F4F0E8] leading-[1.12] tracking-[0.02em] text-balance">
-            HONOR ARMED WITH LEVERAGE.
-          </h2>
-
-          <p className="text-base sm:text-lg text-[#E6DFD1]/85 font-light leading-relaxed">
-            For too long, traditional markets have operated behind closed doors. DeadLockCartel is an alliance of independent individuals who unite around shared value, collective intelligence, and a common economic vision.
-          </p>
-
-          <p className="text-sm text-[#77736B] leading-relaxed">
-            We wear bespoke suits for dignity. Our strength is not aggression, but unity, discipline, and mutual protection.
-          </p>
-
-          <div className="pt-4">
-            <button
-              onClick={() => setRoute('/lore')}
-              className="group inline-flex items-center gap-3 text-xs font-mono uppercase tracking-[0.24em] text-[#B69A67] hover:text-[#F4F0E8] transition-colors duration-300 cursor-pointer"
+        {/* Asymmetrical Editorial Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          {/* Left Column: Masked Section Headline (Cols 1-6) */}
+          <div className="lg:col-span-6">
+            <motion.h2
+              aria-label="HONOR ARMED WITH LEVERAGE."
+              initial={shouldReduceMotion ? 'visible' : 'hidden'}
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={{
+                hidden: {},
+                visible: { transition: { staggerChildren: 0.1 } }
+              }}
+              className="font-display font-light text-4xl sm:text-6xl lg:text-7xl text-[#F4F0E8] leading-[0.92] tracking-[-0.01em]"
             >
-              <span>READ THE FULL MANIFESTO</span>
-              <span className="transition-transform duration-300 group-hover:translate-x-1.5">→</span>
-            </button>
+              <span className="block overflow-hidden pb-1">
+                <motion.span
+                  variants={{
+                    hidden: { y: '105%' },
+                    visible: { y: 0, transition: { duration: 0.85, ease: easeEditorial } }
+                  }}
+                  className="block"
+                >
+                  HONOR ARMED
+                </motion.span>
+              </span>
+              <span className="block overflow-hidden pt-1">
+                <motion.span
+                  variants={{
+                    hidden: { y: '105%' },
+                    visible: { y: 0, transition: { duration: 0.85, ease: easeEditorial } }
+                  }}
+                  className="block text-[#E6DFD1]"
+                >
+                  WITH LEVERAGE<span className="text-[#B69A67]">.</span>
+                </motion.span>
+              </span>
+            </motion.h2>
           </div>
-        </motion.div>
+
+          {/* Right Column: Exact Excerpt & Discreet Link (Cols 7-12) */}
+          <div className="lg:col-span-6 space-y-8 pt-2">
+            <p className="font-display font-light text-2xl sm:text-3xl text-[#F4F0E8] leading-[1.35]">
+              DeadLockCartel is an alliance of independent individuals, creators and traders, united around shared value, collective intelligence, mutual protection and a common economic treasury.
+            </p>
+
+            <p className="text-sm sm:text-base text-[#A39E92] leading-relaxed max-w-xl">
+              Wall Street had its cartels. Now, the everyday people have theirs. &ldquo;Cartel&rdquo; is a metaphor for an economic alliance, nothing more.
+            </p>
+
+            <div className="pt-4 border-t border-[rgba(230,223,209,0.14)]">
+              <button
+                onClick={() => setRoute('/lore')}
+                className="group inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.26em] text-[#B69A67] hover:text-[#F4F0E8] transition-colors duration-200 cursor-pointer py-1"
+              >
+                <span>READ THE FULL MANIFESTO →</span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

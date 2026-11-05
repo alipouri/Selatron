@@ -37,7 +37,7 @@ export const GTDModal: React.FC = () => {
       <div className="relative w-full max-w-lg bg-[#1a1a1a] border border-[#2d2d2d] rounded-sm p-6 sm:p-8 shadow-2xl text-[#E6DFD1]">
         <button
           onClick={() => setIsGtdModalOpen(false)}
-          className="absolute top-5 right-5 text-[#77736B] hover:text-[#F4F0E8] transition-colors cursor-pointer"
+          className="absolute top-5 right-5 text-[#A39E92] hover:text-[#F4F0E8] transition-colors cursor-pointer"
           aria-label="Close modal"
         >
           <X size={20} />
@@ -47,7 +47,7 @@ export const GTDModal: React.FC = () => {
           <div className="py-8 text-center space-y-4">
             <CheckCircle2 size={48} className="mx-auto text-[#B69A67] animate-pulse" />
             <h3 className="text-xl font-display font-bold text-[#F4F0E8]">APPLICATION FILED</h3>
-            <p className="text-xs text-[#77736B] max-w-sm mx-auto leading-relaxed">
+            <p className="text-xs text-[#A39E92] max-w-sm mx-auto leading-relaxed">
               Your dossier for GTD Clearance has been logged for Squad Commander review. All spots are vetted manually based on proof-of-merit and discipline.
             </p>
           </div>
@@ -60,13 +60,13 @@ export const GTDModal: React.FC = () => {
             <h2 id="gtd-modal-title" className="text-xl font-display font-bold text-[#F4F0E8]">
               APPLY FOR GTD CLEARANCE
             </h2>
-            <p className="text-xs text-[#77736B] mt-1.5 mb-6 leading-relaxed">
+            <p className="text-xs text-[#A39E92] mt-1.5 mb-6 leading-relaxed">
               Guaranteed mint access is reserved for independent builders, analysts, and protectors who stand ready to strengthen the alliance.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-[11px] font-mono uppercase tracking-wider text-[#77736B] mb-1.5">
+                <label className="block text-[11px] font-mono uppercase tracking-wider text-[#A39E92] mb-1.5">
                   X / Discord Handle <span className="text-[#B69A67]">*</span>
                 </label>
                 <input
@@ -80,7 +80,7 @@ export const GTDModal: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-[11px] font-mono uppercase tracking-wider text-[#77736B] mb-1.5">
+                <label className="block text-[11px] font-mono uppercase tracking-wider text-[#A39E92] mb-1.5">
                   EVM Wallet Address <span className="text-[#B69A67]">*</span>
                 </label>
                 <input
@@ -94,7 +94,7 @@ export const GTDModal: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-[11px] font-mono uppercase tracking-wider text-[#77736B] mb-1.5">
+                <label className="block text-[11px] font-mono uppercase tracking-wider text-[#A39E92] mb-1.5">
                   Primary Domain of Contribution
                 </label>
                 <select
@@ -111,7 +111,7 @@ export const GTDModal: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-[11px] font-mono uppercase tracking-wider text-[#77736B] mb-1.5">
+                <label className="block text-[11px] font-mono uppercase tracking-wider text-[#A39E92] mb-1.5">
                   Statement of Intent / Relevant Experience
                 </label>
                 <textarea
@@ -127,7 +127,7 @@ export const GTDModal: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setIsGtdModalOpen(false)}
-                  className="px-4 py-2 text-xs text-[#77736B] hover:text-[#E6DFD1] transition-colors cursor-pointer"
+                  className="px-4 py-2 text-xs text-[#A39E92] hover:text-[#E6DFD1] transition-colors cursor-pointer"
                 >
                   Cancel
                 </button>
