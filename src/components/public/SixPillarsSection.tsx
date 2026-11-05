@@ -139,13 +139,13 @@ export const SixPillarsSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Right: Restrained Vault Panel with Clip-Path Reveal (Cols 8-12) */}
+        {/* Right: Restrained Vault Panel (Cols 8-12) */}
         <motion.aside
           aria-label="The Vault Status Panel"
-          initial={shouldReduceMotion ? false : { clipPath: 'inset(0% 0% 100% 0%)' }}
-          whileInView={{ clipPath: 'inset(0% 0% 0% 0%)' }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 1.4, ease: easeEditorial }}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 1.0, ease: easeEditorial }}
           className="lg:col-span-5 bg-[#202020]/80 border border-[rgba(230,223,209,0.14)] p-7 sm:p-10 space-y-8"
         >
           <div className="flex items-center justify-between pb-5 border-b border-[rgba(230,223,209,0.14)]">

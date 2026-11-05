@@ -13,6 +13,7 @@ interface PhyllotaxisFigureProps {
   animateAssembly?: boolean;
   interactivePoints?: boolean;
   onPointSelect?: (point: HoveredPointInfo) => void;
+  onTierSelect?: (tier: TierId) => void;
   ariaLabel?: string;
   className?: string;
 }
@@ -34,6 +35,8 @@ interface TierSpec {
   radius: number;
   parallaxK: number;
   delayOffset: number;
+  innerNormR: number;
+  outerNormR: number;
   points: TierPoint[];
 }
 
@@ -55,7 +58,9 @@ const TIER_SPECS: TierSpec[] = (() => {
       color: '#CDB27D',
       radius: 3.2,
       parallaxK: 14,
-      delayOffset: 0.45
+      delayOffset: 0.45,
+      innerNormR: 0,
+      outerNormR: SEAL_RADII[0]
     },
     {
       id: 'godmother',
@@ -65,7 +70,9 @@ const TIER_SPECS: TierSpec[] = (() => {
       color: '#B69A67',
       radius: 2.1,
       parallaxK: 10,
-      delayOffset: 0.30
+      delayOffset: 0.30,
+      innerNormR: SEAL_RADII[0],
+      outerNormR: SEAL_RADII[1]
     },
     {
       id: 'member',
@@ -75,7 +82,9 @@ const TIER_SPECS: TierSpec[] = (() => {
       color: '#E6DFD1',
       radius: 1.5,
       parallaxK: 6,
-      delayOffset: 0.15
+      delayOffset: 0.15,
+      innerNormR: SEAL_RADII[1],
+      outerNormR: SEAL_RADII[2]
     },
     {
       id: 'rookie',
@@ -85,7 +94,9 @@ const TIER_SPECS: TierSpec[] = (() => {
       color: '#8E897D',
       radius: 1.15,
       parallaxK: 3,
-      delayOffset: 0.0
+      delayOffset: 0.0,
+      innerNormR: SEAL_RADII[2],
+      outerNormR: SEAL_RADII[3]
     }
   ];
 
@@ -125,18 +136,24 @@ export const PhyllotaxisFigure: React.FC<PhyllotaxisFigureProps> = ({
   animateAssembly = false,
   interactivePoints = false,
   onPointSelect,
+  onTierSelect,
   ariaLabel = 'One circle of 3,333 points: 33 Kingpins at the centre, then 169 Godmothers, 469 Members and 2,662 Rookies.',
   className = ''
 }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const highlightedTierRef = useRef<TierId | null>(highlightedTier);
   const onPointSelectRef = useRef(onPointSelect);
+  const onTierSelectRef = useRef(onTierSelect);
   const [hoveredPoint, setHoveredPoint] = useState<(HoveredPointInfo & { x: number; y: number }) | null>(null);
   const hoveredTokenIdRef = useRef<number | null>(null);
 
   useEffect(() => {
     onPointSelectRef.current = onPointSelect;
   }, [onPointSelect]);
+
+  useEffect(() => {
+    onTierSelectRef.current = onTierSelect;
+  }, [onTierSelect]);
 
   useEffect(() => {
     highlightedTierRef.current = highlightedTier;
@@ -172,7 +189,7 @@ export const PhyllotaxisFigure: React.FC<PhyllotaxisFigureProps> = ({
       if (!size) return;
 
       const activeTier = highlightedTierRef.current;
-      const R = size * 0.46;
+      const R = size * 0.455;
       const u = size / 700;
       const angle = prefersReducedMotion ? 0 : now * DRIFT_RATE;
       const cosA = Math.cos(angle);
@@ -184,21 +201,50 @@ export const PhyllotaxisFigure: React.FC<PhyllotaxisFigureProps> = ({
       ctx.save();
       ctx.translate(size / 2, size / 2);
 
-      // 1. Concentric hairline rings lock in during final 25% of convergence
+      // 1. Concentric hairline indicator rings for each alliance tier
       const ringProgress = Math.min(1, Math.max(0, (asm - 0.75) / 0.25));
+
+      // Draw subtle radial band highlight when a tier is selected
+      if (activeTier && ringProgress > 0) {
+        const selectedSpec = TIER_SPECS.find((t) => t.id === activeTier);
+        if (selectedSpec) {
+          const innerR = selectedSpec.innerNormR * R;
+          const outerR = selectedSpec.outerNormR < 1 ? selectedSpec.outerNormR * R : R + 10 * u;
+          ctx.save();
+          ctx.beginPath();
+          ctx.arc(0, 0, outerR, 0, Math.PI * 2);
+          if (innerR > 0) {
+            ctx.arc(0, 0, innerR, 0, Math.PI * 2, true);
+          }
+          ctx.fillStyle = `rgba(182, 154, 103, ${0.065 * ringProgress})`;
+          ctx.fill();
+          ctx.restore();
+        }
+      }
+
+      // Draw the 4 concentric indicator circles
       SEAL_RADII.forEach((q, idx) => {
-        const isHighlightedRing =
+        const ringRadius = q < 1 ? R * q : R + 10 * u;
+        const isOuterBoundaryOfActive =
           (activeTier === 'kingpin' && idx === 0) ||
           (activeTier === 'godmother' && idx === 1) ||
           (activeTier === 'member' && idx === 2) ||
           (activeTier === 'rookie' && idx === 3);
+        const isInnerBoundaryOfActive =
+          (activeTier === 'godmother' && idx === 0) ||
+          (activeTier === 'member' && idx === 1) ||
+          (activeTier === 'rookie' && idx === 2);
+
+        const isHighlightedRing = isOuterBoundaryOfActive || isInnerBoundaryOfActive;
 
         ctx.beginPath();
-        ctx.arc(0, 0, q < 1 ? R * q : R + 12 * u, 0, 6.2832);
-        ctx.lineWidth = isHighlightedRing ? 1.25 : 1;
-        ctx.strokeStyle = isHighlightedRing
-          ? `rgba(182, 154, 103, ${0.48 * ringProgress})`
-          : `rgba(230, 223, 209, ${0.16 * ringProgress})`;
+        ctx.arc(0, 0, ringRadius, 0, Math.PI * 2);
+        ctx.lineWidth = isOuterBoundaryOfActive ? 1.5 : isInnerBoundaryOfActive ? 1.15 : 1;
+        ctx.strokeStyle = isOuterBoundaryOfActive
+          ? `rgba(182, 154, 103, ${0.75 * ringProgress})`
+          : isInnerBoundaryOfActive
+          ? `rgba(182, 154, 103, ${0.42 * ringProgress})`
+          : `rgba(230, 223, 209, ${0.18 * ringProgress})`;
         ctx.stroke();
       });
 
@@ -214,7 +260,10 @@ export const PhyllotaxisFigure: React.FC<PhyllotaxisFigureProps> = ({
 
         const ox = mouse.x * tier.parallaxK * u;
         const oy = mouse.y * tier.parallaxK * u;
-        const r = tier.radius * u;
+        const r =
+          activeTier && activeTier === tier.id
+            ? tier.radius * u * 1.12
+            : tier.radius * u;
 
         ctx.globalAlpha = tierAlphas[k];
         ctx.fillStyle = tier.color;
@@ -230,7 +279,7 @@ export const PhyllotaxisFigure: React.FC<PhyllotaxisFigureProps> = ({
           const X = (px * cosA - py * sinA) * R + ox;
           const Y = (px * sinA + py * cosA) * R + oy;
           ctx.moveTo(X + r, Y);
-          ctx.arc(X, Y, r, 0, 6.2832);
+          ctx.arc(X, Y, r, 0, Math.PI * 2);
 
           if (hoveredTokenIdRef.current === pt.tokenId) {
             hoveredCoords = { X, Y, r, color: tier.color };
@@ -245,13 +294,13 @@ export const PhyllotaxisFigure: React.FC<PhyllotaxisFigureProps> = ({
         ctx.globalAlpha = 1;
         ctx.fillStyle = color;
         ctx.beginPath();
-        ctx.arc(X, Y, r * 1.9, 0, 6.2832);
+        ctx.arc(X, Y, r * 1.9, 0, Math.PI * 2);
         ctx.fill();
 
         ctx.strokeStyle = '#B69A67';
         ctx.lineWidth = 1;
         ctx.beginPath();
-        ctx.arc(X, Y, r * 3.6 + 3, 0, 6.2832);
+        ctx.arc(X, Y, r * 3.6 + 3, 0, Math.PI * 2);
         ctx.stroke();
       }
 
@@ -290,13 +339,13 @@ export const PhyllotaxisFigure: React.FC<PhyllotaxisFigureProps> = ({
     };
     window.addEventListener('pointermove', handleWindowPointerMove, { passive: true });
 
-    // Optional point-level hit testing on canvas hover/click
+    // Point-level and ring-band hit testing on canvas hover/click
     const findNearestPoint = (clientX: number, clientY: number) => {
       if (!size || asm < 0.85) return null;
       const rect = canvas.getBoundingClientRect();
       const localX = clientX - rect.left - size / 2;
       const localY = clientY - rect.top - size / 2;
-      const R = size * 0.46;
+      const R = size * 0.455;
       const u = size / 700;
 
       let bestDistSq = 120; // max hit radius squared (~11px)
@@ -330,6 +379,20 @@ export const PhyllotaxisFigure: React.FC<PhyllotaxisFigureProps> = ({
       return bestMatch;
     };
 
+    const findTierByRadius = (clientX: number, clientY: number): TierId | null => {
+      if (!size) return null;
+      const rect = canvas.getBoundingClientRect();
+      const localX = clientX - rect.left - size / 2;
+      const localY = clientY - rect.top - size / 2;
+      const R = size * 0.455;
+      const normDist = Math.sqrt(localX * localX + localY * localY) / Math.max(R, 1);
+      if (normDist > 1.06) return null;
+      if (normDist <= SEAL_RADII[0]) return 'kingpin';
+      if (normDist <= SEAL_RADII[1]) return 'godmother';
+      if (normDist <= SEAL_RADII[2]) return 'member';
+      return 'rookie';
+    };
+
     const handleCanvasPointerMove = (e: PointerEvent) => {
       if (!interactivePoints) return;
       const match = findNearestPoint(e.clientX, e.clientY);
@@ -346,8 +409,18 @@ export const PhyllotaxisFigure: React.FC<PhyllotaxisFigureProps> = ({
     const handleCanvasClick = (e: MouseEvent) => {
       if (!interactivePoints) return;
       const match = findNearestPoint(e.clientX, e.clientY);
-      if (match && onPointSelectRef.current) {
-        onPointSelectRef.current(match);
+      if (match) {
+        if (onTierSelectRef.current) {
+          onTierSelectRef.current(match.tier);
+        }
+        if (onPointSelectRef.current) {
+          onPointSelectRef.current(match);
+        }
+        return;
+      }
+      const ringTier = findTierByRadius(e.clientX, e.clientY);
+      if (ringTier && onTierSelectRef.current) {
+        onTierSelectRef.current(ringTier);
       }
     };
 
@@ -356,9 +429,7 @@ export const PhyllotaxisFigure: React.FC<PhyllotaxisFigureProps> = ({
     canvas.addEventListener('click', handleCanvasClick);
 
     const handleHighlight = () => {
-      if (prefersReducedMotion) {
-        draw(0);
-      }
+      draw(performance.now());
     };
     canvas.addEventListener('tierhighlight', handleHighlight);
 
@@ -402,7 +473,7 @@ export const PhyllotaxisFigure: React.FC<PhyllotaxisFigureProps> = ({
         role="img"
         aria-label={ariaLabel}
         className={`block w-full h-full select-none ${
-          interactivePoints && hoveredPoint ? 'cursor-pointer' : ''
+          interactivePoints ? 'cursor-pointer' : ''
         }`}
       />
       {interactivePoints && hoveredPoint && (

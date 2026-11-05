@@ -10,6 +10,7 @@ interface CollectionTierRow {
   supply: string;
   name: string;
   votingPower: string;
+  dotColor: string;
   archetype: string;
   details: string;
   ringNote: string;
@@ -21,6 +22,7 @@ const COLLECTION_TIERS: CollectionTierRow[] = [
     supply: '33',
     name: 'Kingpins',
     votingPower: '50x',
+    dotColor: '#CDB27D',
     archetype: 'Apex Architects',
     details: 'Strategic leaders, special bounty rewards.',
     ringNote: 'Indices 0–32 · Innermost Ring (r = √(33/3333))'
@@ -30,6 +32,7 @@ const COLLECTION_TIERS: CollectionTierRow[] = [
     supply: '169',
     name: 'Godmothers',
     votingPower: '15x',
+    dotColor: '#B69A67',
     archetype: 'Matriarchs of Stock Endowment',
     details: 'Treasury and community welfare role, 100% mint rebate per brief.',
     ringNote: 'Indices 33–201 · Second Ring (r = √(202/3333))'
@@ -39,6 +42,7 @@ const COLLECTION_TIERS: CollectionTierRow[] = [
     supply: '469',
     name: 'Members',
     votingPower: '5x',
+    dotColor: '#E6DFD1',
     archetype: 'Sworn Squad Captains',
     details: 'Each supervises ~5–6 Rookies.',
     ringNote: 'Indices 202–670 · Third Ring (r = √(671/3333))'
@@ -48,6 +52,7 @@ const COLLECTION_TIERS: CollectionTierRow[] = [
     supply: '2,662',
     name: 'Rookies',
     votingPower: '1x',
+    dotColor: '#8E897D',
     archetype: 'Street Vanguard',
     details: 'Community foundation, path to Member via Ascension.',
     ringNote: 'Indices 671–3332 · Outer Ring (r = 1.0)'
@@ -65,6 +70,10 @@ export const CollectionSection: React.FC = () => {
 
   const handleRowToggle = (tierId: TierId) => {
     setExpandedTier((prev) => (prev === tierId ? null : tierId));
+  };
+
+  const handleTierSelectFromCircle = (tierId: TierId) => {
+    setExpandedTier(tierId);
   };
 
   const handlePointSelect = (point: HoveredPointInfo) => {
@@ -183,17 +192,26 @@ export const CollectionSection: React.FC = () => {
                     >
                       {tier.supply}
                     </span>
-                    <span
-                      className={`text-xs sm:text-sm uppercase tracking-[0.24em] transition-colors duration-300 ${
-                        isHighlighted ? 'text-[#B69A67]' : 'text-[#A39E92] group-hover:text-[#F4F0E8]'
-                      }`}
-                    >
-                      {tier.name}
+                    <span className="flex items-center gap-3">
+                      <span
+                        aria-hidden="true"
+                        className={`w-2.5 h-2.5 rounded-full transition-transform duration-300 ${
+                          isHighlighted ? 'scale-125 ring-2 ring-[#B69A67]/50' : 'opacity-70'
+                        }`}
+                        style={{ backgroundColor: tier.dotColor }}
+                      />
+                      <span
+                        className={`font-display font-light text-2xl sm:text-4xl tracking-[0.01em] transition-colors duration-300 ${
+                          isHighlighted ? 'text-[#F4F0E8]' : 'text-[#E6DFD1] group-hover:text-[#F4F0E8]'
+                        }`}
+                      >
+                        {tier.name}
+                      </span>
                     </span>
                   </div>
 
                   <div className="flex items-center gap-5 shrink-0">
-                    <span className="font-display font-light text-2xl sm:text-3xl tabular-nums text-[#E6DFD1]">
+                    <span className="font-display font-light text-2xl sm:text-3xl tabular-nums text-[#B69A67]">
                       {tier.votingPower}
                     </span>
                     <span className="text-[#A39E92] group-hover:text-[#F4F0E8] transition-colors">
@@ -208,7 +226,7 @@ export const CollectionSection: React.FC = () => {
                       initial={shouldReduceMotion ? false : { height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.5, ease: easeEditorial }}
+                      transition={{ duration: 0.45, ease: easeEditorial }}
                       className="overflow-hidden"
                     >
                       <div className="pb-6 pl-21 sm:pl-28 pr-4 space-y-2">
@@ -231,7 +249,7 @@ export const CollectionSection: React.FC = () => {
 
           {/* Honest Placeholder Notice & Clear Highlight Control */}
           <div className="pt-6 flex flex-wrap items-center justify-between gap-4 text-[11px] uppercase tracking-[0.2em] text-[#A39E92]">
-            <span>HOVER OR CLICK ANY POINT OR RANK TO INSPECT</span>
+            <span>TAP ANY ALLIANCE TIER OR RING TO SELECT</span>
             {expandedTier && (
               <button
                 type="button"
@@ -244,27 +262,62 @@ export const CollectionSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Right: Clip-Path Revealed Interactive Phyllotaxis Figure (Cols 7-12) */}
+        {/* Right: Interactive Phyllotaxis Figure with Tier Ring Selection (Cols 7-12) */}
         <motion.div
-          initial={shouldReduceMotion ? false : { clipPath: 'inset(0% 0% 100% 0%)' }}
-          whileInView={{ clipPath: 'inset(0% 0% 0% 0%)' }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 1.4, ease: easeEditorial }}
+          initial={shouldReduceMotion ? 'visible' : 'hidden'}
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            hidden: { opacity: 0, scale: 0.96 },
+            visible: {
+              opacity: 1,
+              scale: 1,
+              transition: { duration: 1.0, ease: easeEditorial }
+            }
+          }}
           className="lg:col-span-6 relative bg-[#171717] border border-[rgba(230,223,209,0.14)] p-4 sm:p-6"
         >
           <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.22em] text-[#A39E92] pb-3 border-b border-[rgba(230,223,209,0.14)]">
             <span>PHYLLOTAXIS ARCHIVE · N = 3,333</span>
             <span className="text-[#B69A67]">
-              {highlightedTier ? `HIGHLIGHT: ${highlightedTier.toUpperCase()}` : 'ALL TIERS ACTIVE'}
+              {highlightedTier ? `SELECTED RING: ${highlightedTier.toUpperCase()}` : 'ALL 4 RINGS ACTIVE'}
             </span>
+          </div>
+
+          {/* Interactive Ring Selector Pills above the Circle */}
+          <div className="pt-3 flex flex-wrap items-center justify-between gap-2">
+            {COLLECTION_TIERS.map((tier) => {
+              const isSelected = highlightedTier === tier.id;
+              return (
+                <button
+                  key={tier.id}
+                  type="button"
+                  onClick={() => handleRowToggle(tier.id)}
+                  onMouseEnter={() => setHoveredTier(tier.id)}
+                  onMouseLeave={() => setHoveredTier(null)}
+                  className={`flex items-center gap-2 px-2.5 py-1.5 text-[10px] uppercase tracking-[0.18em] border transition-colors cursor-pointer ${
+                    isSelected
+                      ? 'border-[#B69A67] bg-[#B69A67]/15 text-[#F4F0E8]'
+                      : 'border-[rgba(230,223,209,0.14)] text-[#A39E92] hover:text-[#F4F0E8]'
+                  }`}
+                >
+                  <span
+                    className="w-2 h-2 rounded-full shrink-0"
+                    style={{ backgroundColor: tier.dotColor }}
+                  />
+                  <span>{tier.name}</span>
+                </button>
+              );
+            })}
           </div>
 
           <div className="w-full aspect-square max-w-[520px] mx-auto my-2">
             <PhyllotaxisFigure
               highlightedTier={highlightedTier}
               interactivePoints={true}
+              onTierSelect={handleTierSelectFromCircle}
               onPointSelect={handlePointSelect}
-              ariaLabel="The same circle of 3,333 points. Selecting a tier or hovering a point highlights its share of the alliance."
+              ariaLabel="The same circle of 3,333 points. Selecting a tier or tapping a ring highlights its share of the alliance."
             />
           </div>
 

@@ -13,13 +13,13 @@ export const ManifestoSection: React.FC = () => {
       aria-label="Manifesto — Brand Identity"
       className="relative py-28 sm:py-36 lg:py-48 px-5 sm:px-8 lg:px-14 border-t border-[rgba(230,223,209,0.14)] overflow-hidden"
     >
-      {/* Background: Faint Concentric Hairline Rings with Clip-Path Reveal */}
+      {/* Background: Faint Concentric Hairline Rings */}
       <motion.div
         aria-hidden="true"
-        initial={shouldReduceMotion ? false : { clipPath: 'inset(0% 0% 100% 0%)' }}
-        whileInView={{ clipPath: 'inset(0% 0% 0% 0%)' }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 1.5, ease: easeEditorial }}
+        initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.94 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 1.4, ease: easeEditorial }}
         className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden"
       >
         <svg
