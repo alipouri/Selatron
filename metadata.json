@@ -1,0 +1,6 @@
+{
+  "name": "DEADLOCK CARTEL",
+  "description": "Official digital headquarters of DeadLock Cartel: an on-chain economic brotherhood of 3,333 Sworn Protectors on the Robinhood Chain with a collective tokenized-stock treasury, four-tier hierarchy, and 3-for-1 Ascension Burn.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
